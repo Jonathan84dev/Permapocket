@@ -1,6 +1,5 @@
 #footer {
     background-color: darkseagreen;
-    height: 25%;
     border: thick double #f19509
 }
 
@@ -17,4 +16,9 @@ footer nav ul li {
 
 footer img {
     width: 55px;
+}
+
+main {
+    min-height: calc(100vh - 116px); /* retirer la hauteur du header et du footer */
+    font-family: 'Mali', cursive;
 }
