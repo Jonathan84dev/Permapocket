@@ -1,0 +1,20 @@
+#footer {
+    background-color: darkseagreen;
+    height: 25%;
+    border: thick double #f19509
+}
+
+footer p {
+    font-family: 'Mali', cursive;
+    font-size: 20px;
+
+}
+
+nav ul li {
+    font-family: 'Mystery Quest', cursive;
+    font-size: 24px;
+}
+
+img {
+    width: 55px;
+}
