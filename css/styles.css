@@ -3,7 +3,7 @@ body {
     min-height: 100%;
     position: relative;
 }
-
+/* heeader */
 header {
     font-family: 'Mystery Quest', cursive, Arial, Helvetica, sans-serif;
     background: url(../img/Ferme-du-Bec-Hellouin-permaculture.jpg) center / cover no-repeat;
@@ -52,12 +52,33 @@ nav button:focus {
     outline: none;
 }
 
+
+/*Main*/
+
 main {
     min-height: calc(100vh - 100px);
     /* retirer la hauteur du header et du footer */
     font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
     padding-top: 180px;
 }
+
+.mainmodele .table {
+    width: 300px;
+    height: 300px;
+}
+
+.mainmodele .td {
+    width: 50px;
+    height: 50px;
+}
+
+.vignette {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* footer */
 
 #footer {
     background-color: darkseagreen;
@@ -78,19 +99,15 @@ footer img {
     width: 55px;
 }
 
-.mainmodele table {
-    width: 300px;
-    height: 300px;
-}
 
-.mainmodele td {
-    width: 50px;
-    height: 50px;
-}
 
+/* .cell:hover {
+    background: lightgreen;
+} */
 .active {
     background: green;
 }
+
 
 @media (min-width: 568px) {
  
@@ -128,6 +145,7 @@ footer img {
     main {
         padding-top: 116px;
     }
+    table
     .cell:hover {
         background: lightgreen;
     }
