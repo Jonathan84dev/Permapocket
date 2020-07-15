@@ -31,7 +31,8 @@
 
 
 
-            <nav class="navbar navbar-expand-md offset-5 col-7 offset-md-1 col-md-6  mb-0 p-0 justify-content-end align-items-end">
+            <nav
+                class="navbar navbar-expand-md offset-5 col-7 offset-md-1 col-md-6  mb-0 p-0 justify-content-end align-items-end">
 
                 <button class="navbar-toggler mr-1 bg-white" type="button" data-toggle="collapse"
                     data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
@@ -128,7 +129,7 @@
                 <button id="validationGrille" class="" data-toggle="modal" data-target="#modelId">Valider</button>
             </div>
 
-            <div id="plantes" class="container col-md-4 d-none text-center py-3">
+            <div id="plantes" class="container col-md-5 d-none text-center py-3">
 
 
                 <!-- Modal -->
@@ -156,114 +157,118 @@
                 </div>
 
                 <!-- Isotope -->
-                <!-- <h2>Filtrer</h2>
-                <div id="filters" class="button-group">
+                <h2>Filtrer</h2>
+                <div id="filters" class="button-group filter-button-group">
                     <button class="button is-checked" data-filter="*">Tout voir</button>
                     <button class="button" data-filter=".fruit">Fruits</button>
                     <button class="button" data-filter=".legume">Legumes</button>
                     <button class="button" data-filter=".herbe">Herbes aromatiques</button>
                 </div>
-               <h2>Trié par : </h2>
+                <h2>Trié par : </h2>
                 <div id="sorts" class="button-group"> <button class="button is-checked"
                         data-sort-by="original-order">Par Catégorie</button>
                     <button class="button" data-sort-by="name">Par Nom</button>
-                </div> -->
-                <div class="grid row justify-content-center ">
-                    <figure class="m-1 element-item  fruit" data-category="fruit"><img src="img/fruits/groseille.jpg" alt="groseille"
-                            class="plante">
+                </div>
+                <div class="grid">
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/groseille.jpg"
+                            alt="groseille" class="plante">
                         <figcaption class="name">Groseille</figcaption>
                     </figure>
-                    <figure class="m-1  element-item" data-category="fruit" ><img src="img/fruits/fraise.jpg" alt="fraise"
-                            class="plante">
-                        <figcaption  class="name">Fraise</figcaption>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/fraise.jpg"
+                            alt="fraise" class="plante">
+                        <figcaption class="name">Fraise</figcaption>
                     </figure>
-                    <figure class="m-1 element-item  fruit" data-category="fruit" ><img src="img/fruits/framboise.jpg"
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/framboise.jpg"
                             alt="framboise" class="plante">
-                        <figcaption  class="name">Framboise</figcaption>
+                        <figcaption class="name">Framboise</figcaption>
                     </figure>
-                    <figure class="m-1  element-item fruit" data-category="fruit" ><img src="img/fruits/cassis.jpg" alt="cassis"
-                            class="plante">
-                        <figcaption  class="name">Cassis</figcaption>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/cassis.jpg"
+                            alt="cassis" class="plante">
+                        <figcaption class="name">Cassis</figcaption>
                     </figure>
-                    <figure class="m-1  element-item fruit" data-category="fruit" ><img src="img/fruits/melon.jpg" alt="melon"
-                            class="plante">
-                        <figcaption  class="name">Melon</figcaption>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/melon.jpg"
+                            alt="melon" class="plante">
+                        <figcaption class="name">Melon</figcaption>
                     </figure>
-                    <figure class="m-1  element-item fruit" data-category="fruit"><img src="img/fruits/pastèque.jpg" alt="pastèque"
-                            class="plante">
-                        <figcaption  class="name">Pastèque</figcaption>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/pastèque.jpg"
+                            alt="pastèque" class="plante">
+                        <figcaption class="name">Pastèque</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume  " data-category="legume"><img src="img/legumes/ail.jpg" alt="ail" class="plante">
-                        <figcaption  class="name">Ail</figcaption>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/ail.jpg"
+                            alt="ail" class="plante">
+                        <figcaption class="name">Ail</figcaption>
                     </figure>
-                    <figure class="m-1 element-item  legume  " data-category="legume"><img src="img/legumes/oignon.jpg" alt="oignon"
-                            class="plante">
-                        <figcaption  class="name">Oignon</figcaption>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/oignon.jpg"
+                            alt="oignon" class="plante">
+                        <figcaption class="name">Oignon</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume  " data-category="legume"><img src="img/legumes/echalotte.jpg" alt="echalotte"
-                            class="plante">
-                        <figcaption  class="name">Echalotte</figcaption>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/echalotte.jpg" alt="echalotte" class="plante">
+                        <figcaption class="name">Echalotte</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume  " data-category="legume"><img src="img/legumes/aubergine.jpg" alt="aubergine"
-                            class="plante">
-                        <figcaption  class="name">Aubergine</figcaption>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/aubergine.jpg" alt="aubergine" class="plante">
+                        <figcaption class="name">Aubergine</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume  " data-category="legume"><img src="img/legumes/courgette.jpg" alt="courgette"
-                            class="plante">
-                        <figcaption  class="name">Courgette</figcaption>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/courgette.jpg" alt="courgette" class="plante">
+                        <figcaption class="name">Courgette</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume  " data-category="legume"><img src="img/legumes/pommes-de-terre.jpg"
-                            alt="Pommes de terre" class="plante">
-                        <figcaption  class="name">Pommes de Terre</figcaption>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/pommes-de-terre.jpg" alt="Pommes de terre" class="plante">
+                        <figcaption class="name">Pommes de Terre</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume " data-category="legume"><img src="img/legumes/tomate.jpg" alt="Tomate"
-                            class="plante">
-                        <figcaption  class="name">Tomate</figcaption>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/tomate.jpg"
+                            alt="Tomate" class="plante">
+                        <figcaption class="name">Tomate</figcaption>
                     </figure>
-                    <figure class="m-1  element-item legume " data-category="legume"><img src="img/legumes/carotte.jpg" alt="carotte"
-                            class="plante">
-                        <figcaption  class="name">Carotte</figcaption>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/carotte.jpg"
+                            alt="carotte" class="plante">
+                        <figcaption class="name">Carotte</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/basilic.jpg" alt="basilic"
-                            class="plante">
-                        <figcaption  class="name">Basilic</figcaption>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/basilic.jpg"
+                            alt="basilic" class="plante">
+                        <figcaption class="name">Basilic</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/cerfeuil.jpg" alt="cerfeuil"
-                            class="plante">
-                        <figcaption  class="name">Cerfeuil</figcaption>
+                    <figure class="m-1 grid-item  herbe" data-category="herbe"><img src="img/herbes/cerfeuil.jpg"
+                            alt="cerfeuil" class="plante">
+                        <figcaption class="name">Cerfeuil</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/ciboulette.jpg" alt="ciboulette.jpg"
-                            class="plante">
-                        <figcaption  class="name">Ciboulette</figcaption>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/ciboulette.jpg"
+                            alt="ciboulette.jpg" class="plante">
+                        <figcaption class="name">Ciboulette</figcaption>
                     </figure>
-                    <figure class="m-1 element-item  herbe" data-category="herbe"><img src="img/herbes/estragon.jpg" alt="estragon"
-                            class="plante">
-                        <figcaption  class="name">Estragon</figcaption>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/estragon.jpg"
+                            alt="estragon" class="plante">
+                        <figcaption class="name">Estragon</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/menthe.jpg" alt="menthe"
-                            class="plante">
-                        <figcaption  class="name">Menthe</figcaption>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/menthe.jpg"
+                            alt="menthe" class="plante">
+                        <figcaption class="name">Menthe</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/persil.jpg" alt="persil"
-                            class="plante">
-                        <figcaption  class="name">Persil</figcaption>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/persil.jpg"
+                            alt="persil" class="plante">
+                        <figcaption class="name">Persil</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/romarin.jpg" alt="romarin"
-                            class="plante">
-                        <figcaption  class="name">Romarin</figcaption>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/romarin.jpg"
+                            alt="romarin" class="plante">
+                        <figcaption class="name">Romarin</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/sauge.jpg" alt="sauge" class="plante">
-                        <figcaption  class="name">Sauge</figcaption>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/sauge.jpg"
+                            alt="sauge" class="plante">
+                        <figcaption class="name">Sauge</figcaption>
                     </figure>
-                    <figure class="m-1  element-item herbe" data-category="herbe"><img src="img/herbes/thym.jpg" alt="thym" class="plante">
-                        <figcaption  class="name">Thym</figcaption>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/thym.jpg"
+                            alt="thym" class="plante">
+                        <figcaption class="name">Thym</figcaption>
                     </figure>
-                </div> 
-            
-</div>
+                </div>
+
+            </div>
+            <div class='d-flex justify-content-center'>
             <button id="print" class='imprimer d-none'>Imprimer</button>
             <button id="pdfSave" class='pdfSave d-none'>Sauvegarder</button>
-            
+</div>
         </div>
 
     </main>
@@ -304,7 +309,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="js/scriptsIsotop.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 

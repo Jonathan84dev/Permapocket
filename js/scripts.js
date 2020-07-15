@@ -13,7 +13,7 @@ const returnCreation = document.getElementById('retourCreation');
 const validationGrille = document.getElementById('validationGrille');
 
 const fruits = ['fraise', 'groseille', 'framboise', 'cassis', 'melon', 'pastèque'];
-const legumes = ['aubergine', 'courgette', 'carotte','tomate', 'pommes-de-terre', 'ail', 'oignon', 'echalotte' ];
+const legumes = ['aubergine', 'courgette', 'carotte', 'tomate', 'pommes-de-terre', 'ail', 'oignon', 'echalotte'];
 const herbes = ['thym', 'basilic', 'ciboulette', 'romarin', 'persil', 'estragon', 'cerfeuil', 'melisse', 'menthe', 'sauge'];
 
 generation.addEventListener('click', () => {
@@ -21,18 +21,18 @@ generation.addEventListener('click', () => {
   if (largeur.value >= 0 && longueur.value >= 0) {
     for (let i = 0; i < longueur.value; i++) {
       const newTr = document.createElement('div');
-      newTr.classList.add('tr', 'row', 'col-12', 'flex-nowrap', 'justify-content-center', 'align-items-center', 'm-0');  
+      newTr.classList.add('tr', 'row', 'col-12', 'flex-nowrap', 'justify-content-center', 'align-items-center', 'm-0');
       newGarden.prepend(newTr);
-    
+
       for (let j = 0; j < largeur.value; j++) {
         const newTd = document.createElement('div');
-        newTd.classList.add('td', 'cell', 'm-1', 'p-0');       
+        newTd.classList.add('td', 'cell', 'm-1', 'p-0');
         newTr.appendChild(newTd);
       }
     }
 
     formulaire.style.display = 'none';
-     
+
     creationTable.classList.remove('d-none');
 
   } else { };
@@ -45,9 +45,16 @@ validationGrille.addEventListener('click', () => {
   document.getElementById('print').classList.add('d-block');
   document.getElementById('pdfSave').classList.add('d-block');
   document.getElementsByClassName('explicationVersionDesktop')[0].classList.add('d-block');
-  document.getElementById('exampleModal').on('show.bs.modal', event => {
-    var button = $(event.relatedTarget);
-    var modal = $(this);
-});
+  if (document.getElementById('exampleModal')) {
+    document.getElementById('exampleModal').on('show.bs.modal', event => {
+      var button = $(event.relatedTarget);
+      var modal = $(this);
+    });
+  }
+
+document.getElementById('modelId').addEventListener('click', () => {
+    document.getElementById('modelId').classList.remove('d-block');
+  });
+
 });
 
