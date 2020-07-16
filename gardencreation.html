@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Jardin des simples
+        Créer votre jardin
     </title>
 
     <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
@@ -23,24 +23,26 @@
 
         <div class="row justify-content-start">
             <div class="titre col-12 col-md-5 px-2 pt-2 pb-0">
-                <div class="logo ">
-                    <img src="img/adalia-coccinelles-adultes.jpg" alt="logo de permapocket">
+                <div class="logo">
+                    <img src="img/coccInelle.svg" alt="logo de permapocket">
                     <h1 class="d-inline ml-2">Permapocket</h1>
                 </div>
             </div>
 
 
 
-            <nav class="navbar navbar-expand-md offset-5 col-7 offset-md-1 col-md-6  mb-0 p-0 justify-content-end align-items-end">
+            <nav
+                class="navbar navbar-expand-md offset-5 col-7 offset-md-1 col-md-6  mb-0 p-0 justify-content-end align-items-end">
 
-                <button class="navbar-toggler mx-1 mt-3 bg-white" type="button" data-toggle="collapse"
+                <button class="navbar-toggler mr-1 bg-white" type="button" data-toggle="collapse"
                     data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon ">
                         <i class="fa fa-bars bars" aria-hidden="true"></i></span>
                 </button>
 
-                <div class="menu collapse navbar-collapse d-md-flex justify-content-end p-0 mr-3" id="navbarToggleExternalContent">
+                <div class="menu collapse navbar-collapse d-md-flex justify-content-end p-0 mr-3"
+                    id="navbarToggleExternalContent">
 
                     <ul class="text-center pt-2 pb-2 m-0 pl-0">
                         <li class="d-md-inline-block list-unstyled px-2"><a href="index.html">Accueil</a></li>
@@ -53,81 +55,226 @@
         </div>
     </header>
 
-<main>
+    <main class="mainmodele position-relative my-3">
+        <div class="container row justify-content-center col-12">
+            <form action="#" method="get" class="p-0 col-12" id="formulaire">
+                <!-- <form action="#" method="get" class="p-3 col-12"> -->
+                <div class="input-group mb-3">
+                    <label for="largeur" class="col-12">Largeur: </label>
 
-        <!-- <form action="#" method="get" class="m-3 p-3 d-none"> -->
-        <form action="#" method="get" class="p-3 col-12">
-            <div class="input-group mb-3 ">
-                <label for="largeur" class="col-12">Largeur: </label>
-             
-                <select class="custom-select col-12" id="inputGroupSelect02">
-                  <option selected>Sélectionnez la longeur de votre jardin</option>
-                  <option value="1">0,20</option>
-                  <option value="2">0,40</option>
-                  <option value="3">0,60</option>
-                  <option value="4">0,80</option>
-                  <option value="5">1,00</option>
-                  <option value="6">1,20</option>
-                  <option value="7">1,40</option>
-                  <option value="8">1,60</option>
-                  <option value="9">1,80</option>
-                  <option value="10">2,0</option>
-                  <option value="11">2,20</option>
-                  <option value="12">2,40</option>
-                  <option value="13">2,60</option>
-                  <option value="14">2,80</option>
-                  <option value="15">3</option>
-                </select>
-                <div class="input-group-append">
-                  <label class="input-group-text" for="inputGroupSelect02">m</label>
+                    <select class="custom-select col-12" id="largeur">
+                        <option selected>Sélectionnez la largeur de votre jardin</option>
+                        <option value="1">0,20</option>
+                        <option value="2">0,40</option>
+                        <option value="3">0,60</option>
+                        <option value="4">0,80</option>
+                        <option value="5">1,00</option>
+                        <option value="6">1,20</option>
+                        <option value="7">1,40</option>
+                        <option value="8">1,60</option>
+                        <option value="9">1,80</option>
+                        <option value="10">2,0</option>
+                        <option value="11">2,20</option>
+                        <option value="12">2,40</option>
+                        <option value="13">2,60</option>
+                        <option value="14">2,80</option>
+                        <option value="15">3</option>
+                    </select>
+
+                    <div class="input-group-append">
+                        <label class="input-group-text" for="largeur">m</label>
+                    </div>
                 </div>
-              </div>
 
-            <div class="input-group mb-3 w-100">
-                <label for="longueur" class="col-12">Longueur: </label>
-                <select class="custom-select" id="inputGroupSelect02">
-                  <option selected>Sélectionnez la longeur de votre jardin</option>
-                   <option value="1">0,20</option>
-                  <option value="2">0,40</option>
-                  <option value="3">0,60</option>
-                  <option value="4">0,80</option>
-                  <option value="5">1,00</option>
-                  <option value="6">1,20</option>
-                  <option value="7">1,40</option>
-                  <option value="8">1,60</option>
-                  <option value="9">1,80</option>
-                  <option value="10">2,0</option>
-                  <option value="11">2,20</option>
-                  <option value="12">2,40</option>
-                  <option value="13">2,60</option>
-                  <option value="14">2,80</option>
-                  <option value="15">3</option>
-                </select>
-                <div class="input-group-append">
-                  <label class="input-group-text" for="inputGroupSelect02">m</label>
+                <div class="input-group mb-3 w-100">
+                    <label for="longueur" class="col-12">Longueur: </label>
+                    <select class="custom-select" id="longueur">
+                        <option selected>Sélectionnez la longueur de votre jardin</option>
+                        <option value="1">0,20</option>
+                        <option value="2">0,40</option>
+                        <option value="3">0,60</option>
+                        <option value="4">0,80</option>
+                        <option value="5">1,00</option>
+                        <option value="6">1,20</option>
+                        <option value="7">1,40</option>
+                        <option value="8">1,60</option>
+                        <option value="9">1,80</option>
+                        <option value="10">2,0</option>
+                        <option value="11">2,20</option>
+                        <option value="12">2,40</option>
+                        <option value="13">2,60</option>
+                        <option value="14">2,80</option>
+                        <option value="15">3</option>
+                    </select>
+                    <div class="input-group-append">
+                        <label class="input-group-text" for="longueur">m</label>
+                    </div>
                 </div>
-              </div>
-              <input type="submit" value="Valider">
-        </form>
+                <div class="text-right">
+                    <input id="generation" type="submit" value="Valider">
+                </div>
+            </form>
 
-        <table class="table table-bordered">
-            <tr>
-                <td class="cell active">1</td>
-                <td class="cell active">2</td>
-                <td class="cell active">3</td>
-                <td class="cell active">4</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-        </table>
+            <div id="creationTable" class="table d-none col-12 col-md-7  p-3">
 
-</main>
 
-    
+                <!-- <div class="tr row col-12 justify-content-start align-items-center">
+                    <div class="cell td td m-1 p-0">1</div>
+                    <div class="cell td td m-1 p-0 active">2</div>
+                    <div class="cell td td m-1 p-0 active">3</div>
+                    <div class="cell td td m-1 p-0 active">4</div>
+                </div> -->
+
+                <a href="gardencreation.html"><button id="retourCreation">Revenir à l'étape précédente</button></a>
+                <button id="validationGrille" class="" data-toggle="modal" data-target="#modelId">Valider</button>
+            </div>
+
+            <div id="plantes" class="container col-md-5 d-none text-center py-3">
+
+
+                <!-- Modal -->
+                <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
+                    aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Comment ça marche ?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    Cliquez sur une plante et faites-là glisser sur un emplacement du jardin et cliquez
+                                    de nouveau quand elle est au bon endroit.
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Isotope -->
+                <h2>Filtrer</h2>
+                <div id="filters" class="button-group filter-button-group">
+                    <button class="button is-checked" data-filter="*">Tout voir</button>
+                    <button class="button" data-filter=".fruit">Fruits</button>
+                    <button class="button" data-filter=".legume">Legumes</button>
+                    <button class="button" data-filter=".herbe">Herbes aromatiques</button>
+                </div>
+                <h2>Trié par : </h2>
+                <div id="sorts" class="button-group"> <button class="button is-checked"
+                        data-sort-by="original-order">Par Catégorie</button>
+                    <button class="button" data-sort-by="name">Par Nom</button>
+                </div>
+                <div class="grid">
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/groseille.jpg"
+                            alt="groseille" class="plante">
+                        <figcaption class="name">Groseille</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/fraise.jpg"
+                            alt="fraise" class="plante">
+                        <figcaption class="name">Fraise</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/framboise.jpg"
+                            alt="framboise" class="plante">
+                        <figcaption class="name">Framboise</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/cassis.jpg"
+                            alt="cassis" class="plante">
+                        <figcaption class="name">Cassis</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/melon.jpg"
+                            alt="melon" class="plante">
+                        <figcaption class="name">Melon</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/pastèque.jpg"
+                            alt="pastèque" class="plante">
+                        <figcaption class="name">Pastèque</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/ail.jpg"
+                            alt="ail" class="plante">
+                        <figcaption class="name">Ail</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/oignon.jpg"
+                            alt="oignon" class="plante">
+                        <figcaption class="name">Oignon</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/echalotte.jpg" alt="echalotte" class="plante">
+                        <figcaption class="name">Echalotte</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/aubergine.jpg" alt="aubergine" class="plante">
+                        <figcaption class="name">Aubergine</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/courgette.jpg" alt="courgette" class="plante">
+                        <figcaption class="name">Courgette</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume" data-category="legume"><img
+                            src="img/legumes/pommes-de-terre.jpg" alt="Pommes de terre" class="plante">
+                        <figcaption class="name">Pommes de Terre</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/tomate.jpg"
+                            alt="Tomate" class="plante">
+                        <figcaption class="name">Tomate</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/carotte.jpg"
+                            alt="carotte" class="plante">
+                        <figcaption class="name">Carotte</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/basilic.jpg"
+                            alt="basilic" class="plante">
+                        <figcaption class="name">Basilic</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item  herbe" data-category="herbe"><img src="img/herbes/cerfeuil.jpg"
+                            alt="cerfeuil" class="plante">
+                        <figcaption class="name">Cerfeuil</figcaption>
+                    </figure>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/ciboulette.jpg"
+                            alt="ciboulette.jpg" class="plante">
+                        <figcaption class="name">Ciboulette</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/estragon.jpg"
+                            alt="estragon" class="plante">
+                        <figcaption class="name">Estragon</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/menthe.jpg"
+                            alt="menthe" class="plante">
+                        <figcaption class="name">Menthe</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/persil.jpg"
+                            alt="persil" class="plante">
+                        <figcaption class="name">Persil</figcaption>
+                    </figure>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/romarin.jpg"
+                            alt="romarin" class="plante">
+                        <figcaption class="name">Romarin</figcaption>
+                    </figure>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/sauge.jpg"
+                            alt="sauge" class="plante">
+                        <figcaption class="name">Sauge</figcaption>
+                    </figure>
+                    <figure class="m-1  grid-item herbe" data-category="herbe"><img src="img/herbes/thym.jpg"
+                            alt="thym" class="plante">
+                        <figcaption class="name">Thym</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+            <div class='d-flex justify-content-center'>
+            <button id="print" class='imprimer d-none'>Imprimer</button>
+            <button id="pdfSave" class='pdfSave d-none'>Sauvegarder</button>
+</div>
+        </div>
+
+    </main>
+
+
+
     <footer id="footer" class="container-fluid rounded">
         <div class="row align-items-center justify-content-center">
 
@@ -152,6 +299,7 @@
 
         </div>
     </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -161,6 +309,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="js/scriptsIsotop.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 
