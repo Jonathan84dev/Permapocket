@@ -56,7 +56,7 @@
     </header>
 
     <main class="mainmodele position-relative my-3">
-        <div class="container row justify-content-center col-12">
+        <div class="container row justify-content-center align-items-center col-12">
             <form action="#" method="get" class="p-0 col-12" id="formulaire">
                 <!-- <form action="#" method="get" class="p-3 col-12"> -->
                 <div class="input-group mb-3">
@@ -115,15 +115,8 @@
                 </div>
             </form>
 
-            <div id="creationTable" class="table d-none col-12 col-md-7  p-3">
+            <div id="creationTable" class="table d-none col-12 col-md-7 p-3">
 
-
-                <!-- <div class="tr row col-12 justify-content-start align-items-center">
-                    <div class="cell td td m-1 p-0">1</div>
-                    <div class="cell td td m-1 p-0 active">2</div>
-                    <div class="cell td td m-1 p-0 active">3</div>
-                    <div class="cell td td m-1 p-0 active">4</div>
-                </div> -->
 
                 <a href="gardencreation.html"><button id="retourCreation">Revenir à l'étape précédente</button></a>
                 <button id="validationGrille" class="" data-toggle="modal" data-target="#modelId">Valider</button>
@@ -157,24 +150,29 @@
                 </div>
 
                 <!-- Isotope -->
-                <h2>Filtrer</h2>
-                <div id="filters" class="button-group filter-button-group">
+                <h2 class="h2Isotope">Filtrer</h2>
+                <div id="filters" class="button-group filter-button-group row justify-content-center">
                     <button class="button is-checked" data-filter="*">Tout voir</button>
+                    <br><br>
                     <button class="button" data-filter=".fruit">Fruits</button>
                     <button class="button" data-filter=".legume">Legumes</button>
-                    <button class="button" data-filter=".herbe">Herbes aromatiques</button>
+                    <button class="button" data-filter=".herbe">Herbes</button>
                 </div>
-                <h2>Trié par : </h2>
-                <div id="sorts" class="button-group"> <button class="button is-checked"
-                        data-sort-by="original-order">Par Catégorie</button>
-                    <button class="button" data-sort-by="name">Par Nom</button>
+                <h2 class="h2Isotope">Trier par : </h2>
+                <div id="sorts" class="button-group"> 
+                    <button class="button is-checked" data-sort-by="category">Catégorie</button>
+                    <button class="button " data-sort-by="name">Nom</button>
                 </div>
-                <div class="grid">
-                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/groseille.jpg"
+                <div id="right" class="grid"> 
+                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/oignon.jpg"
+                            alt="oignon" class="plante">
+                        <figcaption class="name">Oignon</figcaption>
+                    </figure>
+                    <figure class="m-1 grid-item fruit " data-category="fruit"><img src="img/fruits/groseille.jpg"
                             alt="groseille" class="plante">
                         <figcaption class="name">Groseille</figcaption>
                     </figure>
-                    <figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/fraise.jpg"
+                    <figure class="m-1 grid-item fruit " data-category="fruit"><img src="img/fruits/fraise.jpg"
                             alt="fraise" class="plante">
                         <figcaption class="name">Fraise</figcaption>
                     </figure>
@@ -198,10 +196,7 @@
                             alt="ail" class="plante">
                         <figcaption class="name">Ail</figcaption>
                     </figure>
-                    <figure class="m-1 grid-item legume " data-category="legume"><img src="img/legumes/oignon.jpg"
-                            alt="oignon" class="plante">
-                        <figcaption class="name">Oignon</figcaption>
-                    </figure>
+                   
                     <figure class="m-1 grid-item legume" data-category="legume"><img
                             src="img/legumes/echalotte.jpg" alt="echalotte" class="plante">
                         <figcaption class="name">Echalotte</figcaption>
@@ -300,19 +295,20 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+ 	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+    
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
+
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-    <script src="js/scriptsIsotop.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/scriptsIsotop.js"></script>
+<script src="js/scripts.js"></script>
 
 </body>
 
