@@ -40,6 +40,22 @@ generation.addEventListener('click', () => {
 
 validationGrille.addEventListener('click', () => {
   document.getElementById('plantes').classList.add('d-md-block');
+  
+
+jQuery(document).ready(($) => {
+  const $grid = jQuery('.grid');
+
+  $grid.isotope({
+    
+      itemSelector: '.grid-item',
+      layoutMode: 'masonry',
+      getSortData: {
+          name: '.name',
+          category: '[data-category]'
+      }
+  });
+});
+
   returnCreation.classList.add('d-none');
   validationGrille.classList.add('d-none');
   document.getElementById('print').classList.add('d-block');
@@ -55,6 +71,43 @@ validationGrille.addEventListener('click', () => {
 document.getElementById('modelId').addEventListener('click', () => {
     document.getElementById('modelId').classList.remove('d-block');
   });
+
+
+
+  //Dragula
+
+  var drake = dragula({copy:true});
+  const td = document.getElementsByClassName('td');
+  
+  const tableauTd = [];
+  for (let i in td) {
+    drake.containers.push(td[i]);
+    tableauTd.push(td[i]);
+};
+
+const figures = document.getElementsByTagName('figure');
+console.log(figures);
+const tabTwo = [];
+  for (let j in figures) {
+    drake.containers.push(figures[j]);
+    // tableauTd.push(figures[j]);
+    tabTwo.push(figures[j]);
+};
+ 
+
+console.log(tableauTd);
+/*Pour drag and drop + copy*/
+var drake = dragula([tableauTd, tabTwo], { copy: true });
+
+/*Pour effacer d'un conteneur*/
+var effacerImage = dragula(tableauTd, { removeOnSpill: true});
+
+drake.on('drag', function () {
+  console.log('test drake');
+})
+effacerImage.on('drag', function (el, target, source, sibling) {
+  console.log('test effacer');
+});
 
 });
 
