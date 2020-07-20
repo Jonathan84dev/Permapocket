@@ -81,46 +81,7 @@ validationGrille.addEventListener('click', () => {
 
 
 
-  //Dragula
-
-  // var drake = dragula({ copy: true });
-  // const td = document.getElementsByClassName('td');
-
-  // const tableauTd = [];
-  // for (let i in td) {
-  //   drake.containers.push(td[i]);
-  //   tableauTd.push(td[i]);
-  // };
-
-  // const figures = document.getElementsByTagName('figure');
-  // console.log(figures);
-  // const tabTwo = [];
-  // for (let j in figures) {
-  //   drake.containers.push(figures[j]);
-  //   // tableauTd.push(figures[j]);
-  //   tabTwo.push(figures[j]);
-  // };
-
-
-  // console.log(tableauTd);
-  /*Pour drag and drop + copy*/
-  // var drake = dragula([tableauTd, tabTwo], { copy: true });
-
-  /*Pour effacer d'un conteneur*/
-  // var effacerImage = dragula(tableauTd, { removeOnSpill: true });
-
-//   drake.on('drag', function () {
-//     console.log('test drake');
-//   })
-//   effacerImage.on('drag', function (el, target, source, sibling) {
-//     console.log('test effacer');
-//   });
-
-
-  
-// });
-
- //Dragula
+   //Dragula
 
   //initialise drake
   var drake = dragula({ copy: true });
@@ -139,33 +100,41 @@ validationGrille.addEventListener('click', () => {
     drake.containers.push(figures[j]);
   };
 
+//permet de vider une case du jardin de son contenu si on veut repositionner l'élément
   drake.containers.push(tableauTd);
-  const effacer = dragula(tableauTd, {removeOnSpill : true});
+  let effacer = dragula(tableauTd, { removeOnSpill: true });
 
-  //console.log(drake.containers);
-
+//empêche de faire un drag de l'élément figcaption
+  drake.on('drag', function (el, target, source) {
+    if (el.tagName === 'FIGCAPTION') {
+      console.log(el.tagName);
+      drake.cancel();
+    }
+  })
   //on drop event, if target container is already full, old image is removed
   drake.on('drop', function (el, target, source, sibling) {
-    console.log('tada');
-    console.log(el);
-    console.log(target);
-    console.log(source);
-    console.log(sibling);
-    console.log(source.tagName);
-    console.log(target.children.length);
-    console.log(target.children);
+    // console.log('tada');
+    //   console.log(el);
+    // console.log(target);
+    // console.log(source);
+    // console.log(sibling);
+    // console.log(source.tagName);
+    // console.log(target.children.length);
+    // console.log(target.children);
+    if (target.tagName === 'DIV') {
+      for (let i of target.children) {
 
-    for (let i of target.children) {
+        if (!i.classList.contains('gu-transit')) {
+          console.log(i);
+          i.remove();
 
-      if (!i.classList.contains('gu-transit')) {
-         console.log(i);
-        i.remove();
-       
-      } 
-      if((source.tagName==='DIV' || source.tagName==='FIGURE') && (target.tagName==='FIGURE' ||target.tagName==='FIGCAPTION')){
-          i.cancel();
         }
-    } 
+      }
+    }
+    if ((source.tagName === 'DIV' || source.tagName === 'FIGURE') && (target.tagName === 'FIGURE' || target.tagName === 'FIGCAPTION')) {
+      if (el.classList.contains('gu-transit'))
+        console.log(el);
+      drake.remove();
+    }
   });
 });
-
