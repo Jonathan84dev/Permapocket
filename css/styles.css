@@ -56,6 +56,54 @@ nav button:focus {
     outline: none;
 }
 
+/* PAGE INDEX */
+
+.card-img-top {
+height: auto;
+width: 100%;
+}
+
+
+.image_modele1 {
+
+background-image: url(../img/exemple/jardin1.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height:200px;
+width:100%;
+}
+
+.image_modele2 {
+
+background-image: url(../img/exemple/jardin2.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height:200px;
+width:100%;
+}
+
+.image_modele3 {
+
+background-image: url(../img/exemple/jardin3.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height:200px;
+width:100%;
+}
+
+h2 {
+    text-align:center;
+}
+
+
+maDiv {
+    height:100px;
+    width:100px;
+    background-color: red;
+}
 
 /*Main*/
 
@@ -65,6 +113,8 @@ main {
     font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
     padding-top: 180px;
 }
+
+
 
 
 .mainmodele .td {
@@ -184,21 +234,21 @@ main {
 
 #footer {
     background-color: darkseagreen;
-    border: thick double #f19509
+    border: thick double #f19509;
 }
 
 footer p {
     font-family: 'Mali', cursive;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 footer nav ul li {
     font-family: 'Mystery Quest', cursive, Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 footer img {
-    width: 55px;
+    width: 35px;
 }
 
 
