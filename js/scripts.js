@@ -15,11 +15,13 @@ jQuery(document).ready(($) => {
   const returnCreation = document.getElementById('retourCreation');
   const validationGrille = document.getElementById('validationGrille');
 
-  //création des tableaux de fruits et légumes
+  //création constante contenant les plantes
 
-  const fruits = ['fraise', 'groseille', 'framboise', 'cassis', 'melon', 'pastèque'];
-  const legumes = ['aubergine', 'courgette', 'carotte', 'tomate', 'pommes-de-terre', 'ail', 'oignon', 'echalotte'];
-  const herbes = ['thym', 'basilic', 'ciboulette', 'romarin', 'persil', 'estragon', 'cerfeuil', 'menthe', 'sauge'];
+  const plantes = {
+    fruit: ['fraise', 'groseille', 'framboise', 'cassis', 'melon', 'pastèque'],
+    legume: ['aubergine', 'courgette', 'carotte', 'tomate', 'pomme de terre', 'ail', 'oignon', 'echalotte'],
+    herbe: ['thym', 'basilic', 'ciboulette', 'romarin', 'persil', 'estragon', 'cerfeuil', 'menthe', 'sauge']
+  }
 
   //Récupération des données du formulaire: au click, génération de la grille
 
@@ -54,29 +56,21 @@ jQuery(document).ready(($) => {
     const newRight = document.createElement('div');
     newRight.setAttribute('id', 'right');
     newRight.setAttribute('class', 'grid');
-    for (let i in fruits) {
-      console.log(fruits[i]);
-      newRight.innerHTML = newRight.innerHTML + `<figure class="m-1 grid-item fruit" data-category="fruit"><img src="img/fruits/${fruits[i]}.jpg"
-    alt="${fruits[i]}" class="plante">
-<figcaption class="name">${fruits[i]}</figcaption>
-</figure>`
-    }
-    for (let i in legumes) {
-      console.log(legumes[i]);
-      newRight.innerHTML = newRight.innerHTML + `<figure class="m-1 grid-item legume"  data-category="legume"><img src="img/legumes/${legumes[i]}.jpg"
-    alt="${legumes[i]}" class="plante">
-<figcaption class="name">${legumes[i]}</figcaption>
-</figure>`
-    }
-    for (let i in herbes) {
-      console.log(herbes[i]);
-      newRight.innerHTML = newRight.innerHTML + `<figure class="m-1 grid-item herbe" data-category="herbe"><img src="img/herbes/${herbes[i]}.jpg"
-    alt="${herbes[i]}" class="plante">
 
-<figcaption class="name">${herbes[i]}</figcaption>
-</figure>`
-    }
+    for (let i in plantes) {
 
+      console.log(i);
+
+      for (let j = 0; j < plantes[i].length; j++) {
+
+        console.log(plantes[i][j]);
+        newRight.innerHTML = newRight.innerHTML + `<figure class="m-1 grid-item ${i}" data-category="${i}">
+                                                  <img src="img/${i}s/${plantes[i][j]}.jpg" alt="${plantes[i][j]}" class="plante">
+                                                  <figcaption class="name">${plantes[i][j]}</figcaption>
+                                                   </figure>`
+      }
+
+    }
     //Insertion de la div contenant les plantes après les boutons de tris
     document.getElementById('sorts').after(newRight);
 
