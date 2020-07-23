@@ -1,375 +1,354 @@
 * {
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     margin: 0;
     min-height: 100%;
     max-width: 100%;
     position: relative;
-    font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
-    background: #EEEEEE;
-    color: #006a71;
-}
-
-/*scrollbar*/
-
-/* width */
-
-::-webkit-scrollbar {
+  }
+  
+  /*** scrollbar ***/
+  
+  /* width */
+  
+  ::-webkit-scrollbar {
     width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
+  }
+  
+  /* Track */
+  
+  ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px #006a71;
     border-radius: 10px;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
+  }
+  
+  /* Handle */
+  
+  ::-webkit-scrollbar-thumb {
     background: #d3de32;
     border-radius: 10px;
-}
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
+  }
+  
+  /* Handle on hover */
+  
+  ::-webkit-scrollbar-thumb:hover {
     background: #d3de32;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-button, #generation {
-    /* background: #d3de32; */
-    background: #006a71;
-    /* border: 2px solid #d3de32; */
-    border-radius: 5px;
-    color: #d3de32;
-    padding: 5px 10px;
-    border: none;
-    font-weight: bold;
-}
-
-/* header */
-
-header {
-    background: #006a71;
-    color: #d3de32;
-    height: 100px;
-}
-
-header a {
-    color: #006a71;
-}
-
-header h1 {
-    font-size: 1.8em;
+  }
+  
+  /*** Polices ***/
+  
+  body {
+    font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
+  }
+  
+  header h1 {
     font-family: 'Mystery Quest', cursive, Arial, Helvetica, sans-serif;
-}
-
-header img {
+  }
+  
+  /*** Couleurs de police ***/
+  
+  header, button, #generation, .bars, .button, .button:hover, .grid-item, footer a:hover {
+    color: #d3de32;
+  }
+  
+  body, header a, .hoverTexte, .button.is-checked {
+    color: #006a71;
+  }
+  
+  header li:hover, a:hover, footer, footer a {
+    color: #ffffdd;
+  }
+  
+  /*** Couleurs de background ***/
+  
+  body, .navbar-toggler {
+    background: #EEEEEE;
+  }
+  
+  header, button, #generation, .button, .grid-item {
+    background: #006a71;
+  }
+  
+  .menu, .button:active, .button.is-checked, .hoverTexte {
+    background-color: #d3de32;
+  }
+  
+  .button:hover, footer, footer a {
+    background-color: #222831;
+  }
+  
+  /*** Règles générales à tout le document ***/
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  /*** header ***/
+  
+  header {
+    height: 100px;
+  }
+  
+  header h1 {
+    font-size: 1.8em;
+  }
+  
+  header img {
     width: 70px;
     height: 100%;
-}
-
-header li {
+  }
+  
+  header li {
     font-size: 1em;
     font-weight: 600;
-}
-
-header li:hover, a:hover {
-    color: #ffffdd;
-}
-
-.navbar-toggler {
+  }
+  
+  .navbar-toggler {
     position: fixed;
     top: 10px;
     right: 0px;
-    background: #EEE;
-}
-
-.menu {
-    background: #d3de32;
+  }
+  
+  .menu {
     border-radius: 10px;
-}
-
-.bars {
+  }
+  
+  .bars {
     font-size: 1.5em;
-    color: #d3de32;
-    ;
-}
-
-nav button:focus {
+  }
+  
+  nav button:focus {
     outline: none;
-}
-
-/* PAGE INDEX */
-
-.card-img-top {
-    height: auto;
-    width: 100%;
-}
-
-.image_modele1 {
-    background-image: url(../img/exemple/jardin1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-.image_modele2 {
-    background-image: url(../img/exemple/jardin2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-.image_modele3 {
-    background-image: url(../img/exemple/jardin3.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-}
-
-h2 {
-    text-align: center;
-}
-
-maDiv {
-    height: 100px;
-    width: 100px;
-    background-color: red;
-}
-
-/*Main*/
-
-main {
+  }
+  
+  /*Main*/
+  
+  main {
     min-height: calc(100vh - 100px);
     /* retirer la hauteur du header et du footer */
     padding-top: 180px;
-}
-
-.mainmodele .td {
+  }
+  
+  .mainmodele .td {
     width: 54px;
     height: 54px;
     border: 2px solid #006a71;
-}
-
-.vignette, .plante {
+  }
+  
+  .vignette, .plante {
     width: 50px;
     height: 50px;
     border: 2px solid #d3de32;
-}
-
-.hoverTexte {
-    background: #d3de32;
-    color: #006a71;
-    z-index: 1000;
+  }
+  
+  .hoverTexte {
     display: none;
+    z-index: 1000;
     width: 100px;
     position: relative;
     top: 15px;
     left: -25px;
     border-radius: 5px;
-}
-
-.td .plante:hover+.hoverTexte {
+  }
+  
+  .td .plante:hover+.hoverTexte {
     display: block;
-}
-
-/* isotop */
-
-/* ---- button ---- */
-
-.button {
+  }
+  
+  button, #generation {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    font-weight: bold;
+  }
+  
+  /*** PAGE INDEX ***/
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .card-img-top {
+    height: auto;
+    width: 100%;
+  }
+  
+  .image_modele1 {
+    background: url(../img/exemple/jardin1.jpg) center / cover no-repeat;
+  }
+  
+  .image_modele2 {
+    background: url(../img/exemple/jardin2.jpg) center / cover no-repeat;
+  }
+  
+  .image_modele3 {
+    background: url(../img/exemple/jardin3.jpg) center / cover no-repeat;
+  }
+  
+  .image_modele1, .image_modele2, .image_modele3 {
+    height: 200px;
+    width: 100%;
+  }
+  
+  /*????*/
+  
+  maDiv {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+  
+  /**** librairie isotope.js ****/
+  
+  /* ---- button ---- */
+  
+  .button {
     display: inline-block;
     padding: 5px 10px;
-    background: #006a71;
     border: none;
     border-radius: 5px;
     background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
-    color: #d3de32;
     font-size: 0.8em;
     cursor: pointer;
-}
-
-.buttonAll {
+  }
+  
+  .buttonAll {
     width: 100%;
-}
-
-.filterButton {
+  }
+  
+  .filterButton {
     width: calc(100%/3);
-}
-
-.button:hover {
-    background-color: #222831;
-    color: #d3de32;
-}
-
-.button:active, .button.is-checked {
-    background-color: #d3de32;
-}
-
-.button.is-checked {
-    color: #006a71;
-}
-
-.button:active, button:active, #generation:active {
+  }
+  
+  .button:active, button:active, #generation:active {
     box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-}
-
-.button:focus, button:focus, #generation:focus {
+  }
+  
+  .button:focus, button:focus, #generation:focus {
     outline: none;
-}
-
-/* ---- button-group ---- */
-
-.button-group {
+  }
+  
+  /* ---- button-group ---- */
+  
+  .button-group {
     margin-bottom: 20px;
-}
-
-.button-group:after {
+  }
+  
+  .button-group:after {
     content: '';
     display: block;
     clear: both;
-}
-
-.button-group .button {
+  }
+  
+  .button-group .button {
     float: left;
     border-radius: 5px;
     margin-left: 1px;
     margin-right: 1px;
-}
-
-/*   
+  }
+  
+  /*   
   .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
   .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; } */
-
-/* ---- isotope ---- */
-
-.grid {
+  
+  .grid {
     border: 2px solid #006a71;
     border-radius: 5px;
-}
-
-/* clear fix */
-
-.grid:after {
+  }
+  
+  /* clear fix */
+  
+  .grid:after {
     content: '';
     display: block;
     clear: both;
-}
-
-/* ---- .grid-item ---- */
-
-.grid-item {
+  }
+  
+  /* ---- .grid-item ---- */
+  
+  .grid-item {
     position: relative;
     float: left;
     width: 100px;
     height: 100px;
     margin: 5px;
     padding: 10px;
-    background: #006a71;
-    color: #d3de32;
     font-size: 0.8em;
     font-weight: bold;
-}
-
-.h2Isotope {
+  }
+  
+  .h2Isotope {
     font-size: 1em;
     text-align: start;
     float: left;
-}
-
-/*dragula CSS*/
-
-.gu-mirror {
+  }
+  
+  /*** librairie dragula.JS CSS ***/
+  
+  .gu-mirror {
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
     opacity: 0.8;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
-}
-
-.gu-hide {
+  }
+  
+  .gu-hide {
     display: none !important;
-}
-
-.gu-unselectable {
+  }
+  
+  .gu-unselectable {
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-}
-
-.gu-transit {
+  }
+  
+  .gu-transit {
     opacity: 0.2;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
     filter: alpha(opacity=20);
-}
-
-#right {
+  }
+  
+  #right {
     max-height: 50vh;
     overflow-y: scroll;
-}
-
-/* footer */
-
-footer, footer a {
-    background-color: #222831;
-    color: #ffffdd;
-    /* border: thick double #f19509; */
-}
-
-footer a:hover {
-    color: #d3de32;
-}
-
-footer p {
+  }
+  
+  /* footer */
+  
+  footer p {
     font-size: 1.1em;
-}
-
-footer nav ul li {
+  }
+  
+  footer nav ul li {
     font-size: 1em;
-}
-
-footer img {
+  }
+  
+  footer img {
     width: 35px;
-}
-/* .cell:hover {
-    background: lightgreen;
-} */
-
-/* .active {
-    background: green;
-} */
-@media (min-width: 568px) {
+  }
+  
+  /*** @media queries ***/
+  
+  @media (min-width: 568px) {
     main {
         min-height: calc(100vh - 100px);
         padding-top: 180px
     }
-    header {
+    /* header {
         height: 100px;
-    }
+    } */
     header img {
         width: 80px;
         height: 100%;
     }
-}
-
-@media (min-width: 768px) {
+  }
+  
+  @media (min-width: 768px) {
     .menu {
         background: none;
     }
@@ -389,14 +368,9 @@ footer img {
     main {
         padding-top: 116px;
     }
-
-    /* table .cell:hover {
-        background: lightgreen;
-      } */
-      
     @media (min-width: 981px) {
         header {
             font-size: 1.2em;
         }
     }
-}
+  }
