@@ -29,7 +29,7 @@
   ::-webkit-scrollbar-thumb {
     background: #d3de32;
     border-radius: 10px;
-  }
+    }
   
   /* Handle on hover */
   
@@ -93,6 +93,7 @@
   
   header h1 {
     font-size: 1.8em;
+    letter-spacing: 3px;
   }
   
   header img {
@@ -107,14 +108,14 @@
   
   .navbar-toggler {
     position: fixed;
-    top: 10px;
+    top: 55px;
     right: 0px;
   }
   
   .menu {
-    border-radius: 10px;
+      border-radius: 0px 0px 10px 10px;
   }
-  
+ 
   .bars {
     font-size: 1.5em;
   }
@@ -122,7 +123,9 @@
   nav button:focus {
     outline: none;
   }
-  
+  .navbar {
+    margin-top: 28px;
+  }
   /*Main*/
   
   main {
@@ -346,6 +349,10 @@
         width: 80px;
         height: 100%;
     }
+    
+    .navbar {
+      margin-top: 19px;
+    }
   }
   
   @media (min-width: 768px) {
@@ -354,9 +361,7 @@
     }
     header ul {
         flex-direction: row;
-        justify-content: end;
-        margin-top: 50px;
-        margin-bottom: 0;
+        justify-content: end;      
     }
     header a, header a:hover {
         color: #d3de32;
@@ -365,6 +370,8 @@
     header a:hover {
         color: #ffffdd;
     }
+
+    
     main {
         padding-top: 116px;
     }
