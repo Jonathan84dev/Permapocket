@@ -15,6 +15,7 @@ jQuery(document).ready(($) => {
   const validationGrille = document.getElementById("validationGrille");
   const figcaption = document.getElementsByTagName("figcaption");
   const hoverTexte = document.getElementsByClassName("hoverTexte");
+
   //fonction : mettre la 1ère lettre des string d'un tableau (nom) en majuscule
   const majFirstLetter = (nom) => {
     for (let i = 0; i < nom.length; i++) {
@@ -53,8 +54,8 @@ jQuery(document).ready(($) => {
 
   //Récupération des données du formulaire: au click, génération de la grille
 
-  generation.addEventListener("click", (event) => {
-    event.preventDefault();
+  generation.addEventListener("click", (e) => {
+    e.preventDefault();
     //génération de la grille
     if (largeur.value >= 0 && longueur.value >= 0) {
       for (let i = 0; i < longueur.value; i++) {
@@ -166,7 +167,8 @@ jQuery(document).ready(($) => {
       }
     });
     //on drop event, if target container is already full, old image is removed
-    drake.on("drop", function (el, target, source, sibling) {
+    // drake.on("drop", function (el, target, source, sibling) {
+    drake.on("drop", (el, target, source, sibling) => {
       // console.log('tada');
       // console.log(el);
       // console.log(target);
