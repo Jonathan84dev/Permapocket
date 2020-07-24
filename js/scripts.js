@@ -84,7 +84,7 @@ jQuery(document).ready(($) => {
       }
 
      
-  }
+  
       //disparition du formulaire
       formulaire.style.display = "none";
       //apparition des boutons de validation de la grille
