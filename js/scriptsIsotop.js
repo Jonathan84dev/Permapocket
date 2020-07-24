@@ -1,5 +1,5 @@
 $.noConflict();
-jQuery(document).ready(() => {
+jQuery(document).ready(($) => {
 
    $('.grid').isotope({
         itemSelector: '.grid-item',

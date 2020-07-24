@@ -1,3 +1,6 @@
+console.log(jQuery);
+
+
 // Sur la page gardencreation.html: 
 // 1.recup donnée du formulaire
 // 2.creation du template de jardin + disparition du formulaire
@@ -30,20 +33,54 @@ generation.addEventListener('click', () => {
         newTr.appendChild(newTd);
       }
     }
+  }
 
     formulaire.style.display = 'none';
 
     creationTable.classList.remove('d-none');
 
-  } else { };
-});
+    
+    // Affichage mobile, selection des div 
+
+let classCompteur = 0;     
+const largeurEcran = window.innerWidth;
+
+/* if (largeurEcran < 768) {
+ */
+
+if (largeurEcran < 768) {
+jQuery('.td').on('click',(e) => {
+    if (jQuery(e.currentTarget).hasClass('div_selected')) 
+    {
+      jQuery(e.currentTarget).removeClass('div_selected');
+      classCompteur--;
+    }
+    else {
+      classCompteur++;
+      jQuery(e.currentTarget).addClass('div_selected');
+    }
+
+    if (classCompteur >= 1) {
+      jQuery('.mobile_categories').attr( "style", "display: block")
+    }
+    else {
+    jQuery('.mobile_categories').attr( "style", "display: none")
+    }
+
+  })
+
+}
+
+
 
 validationGrille.addEventListener('click', () => {
+  if (window.innerWidth > 768) jQuery("#modelId").modal();
   document.getElementById('plantes').classList.add('d-md-block');
   returnCreation.classList.add('d-none');
   validationGrille.classList.add('d-none');
   document.getElementById('print').classList.add('d-block');
   document.getElementById('pdfSave').classList.add('d-block');
+ 
   document.getElementsByClassName('explicationVersionDesktop')[0].classList.add('d-block');
   if (document.getElementById('exampleModal')) {
     document.getElementById('exampleModal').on('show.bs.modal', event => {
@@ -58,3 +95,4 @@ document.getElementById('modelId').addEventListener('click', () => {
 
 });
 
+});
