@@ -129,6 +129,7 @@
   /*Main*/
   
   main {
+
     min-height: calc(100vh - 100px);
     /* retirer la hauteur du header et du footer */
     padding-top: 180px;
@@ -143,8 +144,11 @@
   .vignette, .plante {
     width: 50px;
     height: 50px;
-    border: 2px solid #d3de32;
-  }
+
+}
+
+
+
   
   .hoverTexte {
     display: none;
@@ -166,7 +170,20 @@
     border: none;
     font-weight: bold;
   }
-  
+
+  /* Mobile */
+
+/* selection des div en mode mobile */
+.div_selected {
+    background-color:red;
+}
+
+/* affichage des 3catégories fruits/légumes/herbes */
+.mobile_categories {
+    display:none;
+}
+
+
   /*** PAGE INDEX ***/
   
   h2 {
@@ -208,6 +225,7 @@
   /* ---- button ---- */
   
   .button {
+
     display: inline-block;
     padding: 5px 10px;
     border: none;

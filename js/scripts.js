@@ -1,3 +1,8 @@
+
+console.log(jQuery);
+
+
+
 jQuery(document).ready(($) => {
   // Sur la page gardencreation.html:
   // 1.recup donnée du formulaire
@@ -68,7 +73,7 @@ jQuery(document).ready(($) => {
           "justify-content-center",
           "align-items-center",
           "m-0"
-        );
+        ); 
         newGarden.prepend(newTr);
 
         for (let j = 0; j < largeur.value; j++) {
@@ -77,6 +82,9 @@ jQuery(document).ready(($) => {
           newTr.appendChild(newTd);
         }
       }
+
+     
+  }
       //disparition du formulaire
       formulaire.style.display = "none";
       //apparition des boutons de validation de la grille
@@ -84,9 +92,42 @@ jQuery(document).ready(($) => {
     } else {
     }
   });
+  
+     
+    // Affichage mobile, selection des div 
+
+let classCompteur = 0;     
+const largeurEcran = window.innerWidth;
+
+/* if (largeurEcran < 768) {
+ */
+
+if (largeurEcran < 768) {
+jQuery('.td').on('click',(e) => {
+    if (jQuery(e.currentTarget).hasClass('div_selected')) 
+    {
+      jQuery(e.currentTarget).removeClass('div_selected');
+      classCompteur--;
+    }
+    else {
+      classCompteur++;
+      jQuery(e.currentTarget).addClass('div_selected');
+    }
+
+    if (classCompteur >= 1) {
+      jQuery('.mobile_categories').attr( "style", "display: block")
+    }
+    else {
+    jQuery('.mobile_categories').attr( "style", "display: none")
+    }
+
+  })
+
+}
 
   //Au clic de validation de la grille
   validationGrille.addEventListener("click", () => {
+     if (window.innerWidth > 768) jQuery("#modelId").modal();
     //Création de la liste des plantes
     const newRight = document.createElement("div");
     newRight.setAttribute("id", "right");
@@ -108,12 +149,14 @@ jQuery(document).ready(($) => {
     //Insertion de la div contenant les plantes après les boutons de tris
     document.getElementById("sorts").after(newRight);
 
+
     //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
     majFirstLetter(figcaption);
     majFirstLetter(hoverTexte);
     //Au clic de validation de grille: apparition de la div contenant les imagges
     document.getElementById("plantes").classList.add("d-block");
+
 
     //appel aux fonctions de tri d'isotope (fichier scriptsIsotop.js)
     isotope();
@@ -134,6 +177,7 @@ jQuery(document).ready(($) => {
     //au clic sur les boutons de la modale ou en-dehors, disparition de la modale
     document.getElementById("modelId").addEventListener("click", () => {
       document.getElementById("modelId").classList.remove("d-block");
+
     });
 
     //Dragula
@@ -154,6 +198,7 @@ jQuery(document).ready(($) => {
     for (let j in figures) {
       drake.containers.push(figures[j]);
     }
+
 
     //permet de vider une case du jardin de son contenu si on veut repositionner l'élément
     drake.containers.push(tableauTd);
@@ -194,4 +239,5 @@ jQuery(document).ready(($) => {
       }
     });
   });
+
 });

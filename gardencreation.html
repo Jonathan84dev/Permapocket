@@ -54,8 +54,15 @@
         </div>
     </header>
 
+
     <main class="mainmodele position-relative d-flex align-content-center my-3">
         <div class="container row m-0 justify-content-center align-items-center col-12">
+            <!-- Version Mobile : 3 boutons des catégories fruits/légumes/herbes  -->
+            <p class="mobile_categories">
+                <button class="btn btn-outline-success">Fruits</button>
+                <button class="btn btn-outline-success">Légumes</button>
+                <button class="btn btn-outline-success">Herbes</button>
+            </p>
             <form action="#" method="get" class="p-0 col-12 col-md-5" id="formulaire">
 
                 <div class="input-group mb-3">
@@ -118,14 +125,14 @@
 
 
                 <a href="gardencreation.html"><button id="retourCreation">Revenir à l'étape précédente</button></a>
-                <button id="validationGrille" class="" data-toggle="modal" data-target="#modelId">Valider</button>
+                <button id="validationGrille" class="">Valider</button>
             </div>
 
             <div id="plantes" class="container col-md-5 d-none text-center py-3">
 
 
                 <!-- Modal -->
-                <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
+               <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
                     aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -149,7 +156,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Isotope -->
                 <h2 class="h2Isotope">Filtrer</h2>
                 <div id="filters" class="mx-0 button-group filter-button-group row justify-content-center">
@@ -201,6 +207,7 @@
 
         </div>
     </footer>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -214,6 +221,7 @@
     <!-- dragula  -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js'></script>
     <!-- isotope  -->
+
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <!-- scripts internes -->
     <script src="js/scriptsIsotop.js"></script>
