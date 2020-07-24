@@ -387,15 +387,38 @@
     }
     header a:hover {
         color: #ffffdd;
-    }
-
-    
+    }    
     main {
         padding-top: 116px;
     }
+
     @media (min-width: 981px) {
         header {
             font-size: 1.2em;
         }
     }
+
+    /* Paramètres pour l'impression du jardin */
+    
+    @media print {
+      header, footer, #plantes, #print, #pdfSave, img, form {
+        display: none !important;
+      }
+      .mainmodele .td {
+        width: 100px;
+        height: 100px;
+      }
+
+      .hoverTexte {
+        display: block;
+        z-index: 1000;
+        width: 90px;
+        position: relative;
+        top: 40px;
+        left: 5px;
+        border-radius: 5px;
+      }
+      
+    }
+
   }
