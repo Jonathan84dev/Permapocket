@@ -57,12 +57,27 @@ jQuery(document).ready(($) => {
     ],
   };
 
+  //Fonction de sauvegarde du jardin: 
+  const sauvegarde = (() => {
+    const data = { a: document.getElementById("grilleDeJardin").innerHTML };
+    const json = JSON.stringify(data);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const lien = document.getElementById('lienSave');
+    lien.setAttribute('download', "monJardin.json");
+    lien.setAttribute('href', url);
+  });
+
+
   //Récupération des données du formulaire: au click, génération de la grille
 
   generation.addEventListener("click", (e) => {
     e.preventDefault();
     //génération de la grille
     if (largeur.value >= 0 && longueur.value >= 0) {
+      const newTable = document.createElement("div");
+      newTable.setAttribute("id", "grilleDeJardin");
+      newGarden.prepend(newTable);
       for (let i = 0; i < longueur.value; i++) {
         const newTr = document.createElement("div");
         newTr.classList.add(
@@ -73,8 +88,8 @@ jQuery(document).ready(($) => {
           "justify-content-center",
           "align-items-center",
           "m-0"
-        ); 
-        newGarden.prepend(newTr);
+        );
+        newTable.prepend(newTr);
 
         for (let j = 0; j < largeur.value; j++) {
           const newTd = document.createElement("div");
@@ -82,9 +97,6 @@ jQuery(document).ready(($) => {
           newTr.appendChild(newTd);
         }
       }
-
-     
-  
       //disparition du formulaire
       formulaire.style.display = "none";
       //apparition des boutons de validation de la grille
@@ -92,7 +104,6 @@ jQuery(document).ready(($) => {
     } else {
     }
   });
-  
      
     // Affichage mobile, selection des div 
 
@@ -239,5 +250,10 @@ jQuery('.td').on('click',(e) => {
       }
     });
   });
+
+  //Sauvegarde sur le pc au format json d'un jardin:
+
+  $("#pdfSave").on('click', () => sauvegarde());
+
 
 });
