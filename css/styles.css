@@ -3,10 +3,11 @@
 }
 
 body {
-  margin: 0;
+  margin: 0px;
   min-height: 100%;
   max-width: 100%;
   position: relative;
+
 }
 
 /*** scrollbar ***/
@@ -53,7 +54,7 @@ header, button, #generation, .bars, .input-group-append label, .button, .button:
   color: #d3de32;
 }
 
-body, header a, label, select, .hoverTexte, .button.is-checked {
+body, header a, label, select, .hoverTexte, .button.is-checked, #modele2 h1 {
   color: #006a71;
 }
 
@@ -84,6 +85,19 @@ header, button, #generation, .input-group-append label, .button, .grid-item {
 a:hover {
   text-decoration: none;
 }
+
+.input-group-text {
+  border: 1px solid #006a71;
+}
+
+.input-group .custom-select {
+  border: 1px solid #006a71;
+  border-radius: 5px 0px 0px 5px !important;
+
+}
+
+
+
 
 /*** header ***/
 
@@ -127,13 +141,15 @@ nav button:focus {
 .navbar {
   margin-top: 27px;
 }
-/*Main*/
+
+
+/***Main***/
 
 main {
 
-  min-height: calc(100vh - 100px);
-  /* retirer la hauteur du header et du footer */
-  padding-top: 180px;
+ /* retirer la hauteur du header et du footer */
+   min-height: calc(100vh - 120px);
+  margin-top: 100px !important; 
 }
 
 .mainmodele .td {
