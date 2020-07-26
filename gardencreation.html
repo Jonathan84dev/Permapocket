@@ -121,18 +121,25 @@
                 </div>
             </form>
 
-            <div id="creationTable" class="table d-none col-12 col-md-7 p-3">
+            <div id="creationTable" class="table d-none col-12 col-md-7 m-0 p-0">
 
-
-                <a href="gardencreation.html"><button id="retourCreation">Revenir à l'étape précédente</button></a>
-                <button id="validationGrille" class="">Valider</button>
+                <div class="d-flex justify-content-center m-4">
+                    <a href="gardencreation.html"><button id="retourCreation">Modifier</button></a>
+                    <button id="validationGrille" class="ml-2">Valider</button>
+                </div>
+                <div class='d-flex justify-content-center mt-4'>
+                    <button id="print" class='imprimer d-none mx-3' onClick="window.print()">Imprimer</button>
+                    <a id="lienSave"> <button id="pdfSave" class='pdfSave d-none mx-3'>Sauvegarder</button> </a>
+                    <a id="lienpdf" download="monJardin.pdf"> <button id="pdf" class='pdfSave d-none mx-3'>pdf</button>
+                    </a>
+                </div>
             </div>
 
             <div id="plantes" class="container col-md-5 d-none text-center py-3">
 
 
                 <!-- Modal -->
-               <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
+                <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
                     aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -146,42 +153,41 @@
                                 <div class="container-fluid">
                                     <p>-Cliquez sur une plante et faites-là glisser sur un emplacement libre du jardin.
                                     </p>
-                                    <p>-Pour modifier une plante déposée, choisissez-en un autre et venez la glisser par-dessus</p>
-                                    <p>-Pour déplacer une plante déjà déposée, cliquez dessus, faites-là glisser au-dessus du nouvel emplacement et cliquez de nouveau</p>
-                               </div>
+                                    <p>-Pour modifier une plante déposée, choisissez-en un autre et venez la glisser
+                                        par-dessus</p>
+                                    <p>-Pour déplacer une plante déjà déposée, cliquez dessus, faites-là glisser
+                                        au-dessus du nouvel emplacement et cliquez de nouveau</p>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                <button type="button" data-dismiss="modal">Fermer</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Isotope -->
-                <h2 class="h2Isotope">Filtrer</h2>
+                <!-- <h2 class="h2Isotope">Filtrer</h2> -->
                 <div id="filters" class="mx-0 button-group filter-button-group row justify-content-center">
                     <button class="buttonAll button is-checked" data-filter="*">Tout voir</button>
                     <br><br>
-                    <button class="filterButton button" data-filter=".fruit">Fruits</button>
-                    <button class="filterButton button" data-filter=".legume">Legumes</button>
-                    <button class="filterButton button" data-filter=".herbe">Herbes</button>
+                    <div class="d-flex justify-content-center w-100">
+                        <button class="filterButton button px-3 mr-1" data-filter=".fruit">Fruits</button>
+                        <button class="filterButton button px-3 mx-1" data-filter=".legume">Legumes</button>
+                        <button class="filterButton button px-3 ml-1" data-filter=".herbe">Herbes</button>
+                    </div>
                 </div>
-                <h2 class="h2Isotope">Trier par : </h2>
-                <div id="sorts" class="button-group">
-                    <button class="button is-checked" data-sort-by="category">Catégorie</button>
-                    <button class="button " data-sort-by="name">Nom</button>
+                <!-- <h2 class="h2Isotope">Trier par : </h2> -->
+                <div id="triButton" class="d-flex justify-content-center align-items-start">
+                    <div id="sorts" class="button-group">
+                        <button class="button is-checked mr-1" data-sort-by="category">Tri par Catégorie</button>
+                        <button class="button ml-1" data-sort-by="name">Tri par Nom</button>
+                    </div>
                 </div>
                 <!--a cet endroit: génération de la liste des plantes-->
 
             </div>
-            <div class='d-flex justify-content-center'>
-                <button id="print" class='imprimer d-none mx-3'  onClick="window.print()">Imprimer</button>
-                <a id="lienSave">   <button id="pdfSave" class='pdfSave d-none mx-3'>Sauvegarder</button>  </a> 
-            </div>
         </div>
-
     </main>
-
-
 
     <footer id="footer" class="container-fluid">
         <div class="row align-items-center justify-content-center">

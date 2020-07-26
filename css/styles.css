@@ -1,424 +1,436 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    min-height: 100%;
-    max-width: 100%;
-    position: relative;
-  }
-  
-  /*** scrollbar ***/
-  
-  /* width */
-  
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #006a71;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  
-  ::-webkit-scrollbar-thumb {
-    background: #d3de32;
-    border-radius: 10px;
-    }
-  
-  /* Handle on hover */
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #d3de32;
-  }
-  
-  /*** Polices ***/
-  
-  body {
-    font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
-  }
-  
-  header h1 {
-    font-family: 'Mystery Quest', cursive, Arial, Helvetica, sans-serif;
-  }
-  
-  /*** Couleurs de police ***/
-  
-  header, button, #generation, .bars, .button, .button:hover, .grid-item, footer a:hover {
-    color: #d3de32;
-  }
-  
-  body, header a, .hoverTexte, .button.is-checked {
-    color: #006a71;
-  }
-  
-  header li:hover, a:hover, footer, footer a {
-    color: #ffffdd;
-  }
-  
-  /*** Couleurs de background ***/
-  
-  body, .navbar-toggler {
-    background: #EEEEEE;
-  }
-  
-  header, button, #generation, .button, .grid-item {
-    background: #006a71;
-  }
-  
-  .menu, .button:active, .button.is-checked, .hoverTexte {
-    background-color: #d3de32;
-  }
-  
-  .button:hover, footer, footer a {
-    background-color: #222831;
-  }
-  
-  /*** Règles générales à tout le document ***/
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  /*** header ***/
-  
-  header {
-    height: 100px;
-  }
-  
-  header h1 {
-    font-size: 1.8em;
-    letter-spacing: 3px;
-  }
-  
-  header img {
-    width: 70px;
-    height: 100%;
-  }
-  
-  header li {
-    font-size: 1em;
-    font-weight: 600;
-  }
-  
-  .navbar-toggler {
-    position: fixed;
-    top: 55px;
-    right: 0px;
-  }
-  
-  .menu {
-      border-radius: 0px 0px 10px 10px;
-  }
- 
-  .bars {
-    font-size: 1.5em;
-  }
-  
-  nav button:focus {
-    outline: none;
-  }
-  .navbar {
-    margin-top: 28px;
-  }
-  /*Main*/
-  
-  main {
+  box-sizing: border-box;
+}
 
-    min-height: calc(100vh - 100px);
-    /* retirer la hauteur du header et du footer */
-    padding-top: 180px;
+body {
+  margin: 0;
+  min-height: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+/*** scrollbar ***/
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #006a71;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #d3de32;
+  border-radius: 10px;
   }
-  
-  .mainmodele .td {
-    width: 54px;
-    height: 54px;
-    border: 2px solid #006a71;
-  }
-  
-  .vignette, .plante {
-    width: 50px;
-    height: 50px;
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d3de32;
+}
+
+/*** Polices ***/
+
+body {
+  font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+  font-family: 'Mystery Quest', cursive, Arial, Helvetica, sans-serif;
+}
+
+/*** Couleurs de police ***/
+
+header, button, #generation, .bars, .button, .button:hover, .grid-item, footer a:hover {
+  color: #d3de32;
+}
+
+body, header a, .hoverTexte, .button.is-checked {
+  color: #006a71;
+}
+
+header li:hover, a:hover, footer, footer a {
+  color: #ffffdd;
+}
+
+/*** Couleurs de background ***/
+
+body, .navbar-toggler {
+  background: #EEEEEE;
+}
+
+header, button, #generation, .button, .grid-item {
+  background: #006a71;
+}
+
+.menu, .button:active, .button.is-checked, .hoverTexte {
+  background-color: #d3de32;
+}
+
+.button:hover, footer, footer a {
+  background-color: #222831;
+}
+
+/*** Règles générales à tout le document ***/
+
+a:hover {
+  text-decoration: none;
+}
+
+/*** header ***/
+
+header {
+  height: 100px;
+}
+
+header h1 {
+  font-size: 1.8em;
+  letter-spacing: 3px;
+}
+
+header img {
+  width: 70px;
+  height: 100%;
+}
+
+header li {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.navbar-toggler {
+  position: fixed;
+  top: 55px;
+  right: 0px;
+}
+
+.menu {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.bars {
+  font-size: 1.5em;
+}
+
+nav button:focus {
+  outline: none;
+}
+.navbar {
+  margin-top: 28px;
+}
+/*Main*/
+
+main {
+
+  min-height: calc(100vh - 100px);
+  /* retirer la hauteur du header et du footer */
+  padding-top: 180px;
+}
+
+.mainmodele .td {
+  /* min-width: 54px;
+  max-width: 54px;
+  min-height: 54px;
+  max-height: 54px; */
+  width: 54px;
+  height: 54px;
+  border: 2px solid #006a71;
+  border-radius: 5px;
+}
+
+.vignette, .plante {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #d3de32;
+  border-radius: 5px;
 
 }
 
+.hoverTexte {
+  display: none;
+  z-index: 1000;
+  width: 100px;
+  position: relative;
+  top: 15px;
+  left: -25px;
+  border-radius: 5px;
+}
+
+.td .plante:hover+.hoverTexte {
+  display: block;
+}
+
+button, #generation {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+}
 
 
-  
-  .hoverTexte {
-    display: none;
-    z-index: 1000;
-    width: 100px;
-    position: relative;
-    top: 15px;
-    left: -25px;
-    border-radius: 5px;
-  }
-  
-  .td .plante:hover+.hoverTexte {
-    display: block;
-  }
-  
-  button, #generation {
-    border-radius: 5px;
-    padding: 5px 10px;
-    border: none;
-    font-weight: bold;
-  }
+/* #grilleDeJardin {
+  max-height: 70vh;
+  max-width: 60vw;
+  overflow-y: scroll;
+  overflow-x: scroll;
+} */
 
-  /* Mobile */
+/* Mobile */
 
 /* selection des div en mode mobile */
 .div_selected {
-    background-color:red;
+  background-color:red;
 }
 
 /* affichage des 3catégories fruits/légumes/herbes */
 .mobile_categories {
-    display:none;
+  display:none;
 }
 
 
-  /*** PAGE INDEX ***/
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .card-img-top {
-    height: auto;
-    width: 100%;
-  }
-  
-  .image_modele1 {
-    background: url(../img/exemple/jardin1.jpg) center / cover no-repeat;
-  }
-  
-  .image_modele2 {
-    background: url(../img/exemple/jardin2.jpg) center / cover no-repeat;
-  }
-  
-  .image_modele3 {
-    background: url(../img/exemple/jardin3.jpg) center / cover no-repeat;
-  }
-  
-  .image_modele1, .image_modele2, .image_modele3 {
-    height: 200px;
-    width: 100%;
-  }
-  
-  /*????*/
-  
-  maDiv {
-    height: 100px;
-    width: 100px;
-    background-color: red;
-  }
-  
-  /**** librairie isotope.js ****/
-  
-  /* ---- button ---- */
-  
-  .button {
+/*** PAGE INDEX ***/
 
-    display: inline-block;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
-    font-size: 0.8em;
-    cursor: pointer;
+h2 {
+  text-align: center;
+}
+
+.card-img-top {
+  height: auto;
+  width: 100%;
+}
+
+.image_modele1 {
+  background: url(../img/exemple/jardin1.jpg) center / cover no-repeat;
+}
+
+.image_modele2 {
+  background: url(../img/exemple/jardin2.jpg) center / cover no-repeat;
+}
+
+.image_modele3 {
+  background: url(../img/exemple/jardin3.jpg) center / cover no-repeat;
+}
+
+.image_modele1, .image_modele2, .image_modele3 {
+  height: 200px;
+  width: 100%;
+}
+
+/*????*/
+
+maDiv {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+/**** librairie isotope.js ****/
+
+/* ---- button ---- */
+
+.button {
+
+  display: inline-block;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.buttonAll {
+  width: 100%;
+}
+
+.filterButton {
+  width: calc(100%/3) !important;
+  padding: 0px 10px !important;
+
+}
+
+.button:active, button:active, #generation:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+.button:focus, button:focus, #generation:focus {
+  outline: none;
+}
+
+/* ---- button-group ---- */
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+/*   
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; } */
+
+ 
+/* clear fix */
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.h2Isotope {
+  font-size: 1em;
+  text-align: start;
+  float: left;
+}
+
+/*** librairie dragula.JS CSS ***/
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+#right {
+  min-height: 50vh;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+/* footer */
+
+footer p {
+  font-size: 1.1em;
+}
+
+footer nav ul li {
+  font-size: 1em;
+}
+
+footer img {
+  width: 35px;
+}
+
+/*** @media queries ***/
+
+@media (min-width: 568px) {
+  main {
+      min-height: calc(100vh - 100px);
+      padding-top: 180px
+  }
+  /* header {
+      height: 100px;
+  } */
+  header img {
+      width: 80px;
+      height: 100%;
   }
   
-  .buttonAll {
-    width: 100%;
+  .navbar {
+    margin-top: 19px;
   }
-  
-  .filterButton {
-    width: calc(100%/3);
+}
+
+@media (min-width: 768px) {
+  .menu {
+      background: none;
   }
-  
-  .button:active, button:active, #generation:active {
-    box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+  header ul {
+      flex-direction: row;
+      justify-content: end;      
   }
-  
-  .button:focus, button:focus, #generation:focus {
-    outline: none;
+  header a, header a:hover {
+      color: #d3de32;
+      font-size: 1em;
   }
-  
-  /* ---- button-group ---- */
-  
-  .button-group {
-    margin-bottom: 20px;
+  header a:hover {
+      color: #ffffdd;
+  }    
+  main {
+      padding-top: 116px;
   }
-  
-  .button-group:after {
-    content: '';
-    display: block;
-    clear: both;
+
+  @media (min-width: 981px) {
+      header {
+          font-size: 1.2em;
+      }
   }
+
+  /* Paramètres pour l'impression du jardin */
   
-  .button-group .button {
-    float: left;
-    border-radius: 5px;
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  
-  /*   
-  .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-  .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; } */
-  
-  .grid {
-    border: 2px solid #006a71;
-    border-radius: 5px;
-  }
-  
-  /* clear fix */
-  
-  .grid:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  
-  /* ---- .grid-item ---- */
-  
-  .grid-item {
-    position: relative;
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    padding: 10px;
-    font-size: 0.8em;
-    font-weight: bold;
-  }
-  
-  .h2Isotope {
-    font-size: 1em;
-    text-align: start;
-    float: left;
-  }
-  
-  /*** librairie dragula.JS CSS ***/
-  
-  .gu-mirror {
-    position: fixed !important;
-    margin: 0 !important;
-    z-index: 9999 !important;
-    opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
-  }
-  
-  .gu-hide {
-    display: none !important;
-  }
-  
-  .gu-unselectable {
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-  }
-  
-  .gu-transit {
-    opacity: 0.2;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-    filter: alpha(opacity=20);
-  }
-  
-  #right {
-    max-height: 50vh;
-    overflow-y: scroll;
-  }
-  
-  /* footer */
-  
-  footer p {
-    font-size: 1.1em;
-  }
-  
-  footer nav ul li {
-    font-size: 1em;
-  }
-  
-  footer img {
-    width: 35px;
-  }
-  
-  /*** @media queries ***/
-  
-  @media (min-width: 568px) {
-    main {
-        min-height: calc(100vh - 100px);
-        padding-top: 180px
+  @media print {
+    header, footer, #plantes, #print, #pdfSave, img, form, #lienpdf {
+      display: none !important;
     }
-    /* header {
-        height: 100px;
-    } */
-    header img {
-        width: 80px;
-        height: 100%;
+    .mainmodele .td {
+      width: 100px;
+      height: 100px;
+    }
+
+    .hoverTexte {
+      display: block;
+      z-index: 1000;
+      width: 85px;
+      position: relative;
+      top: 40px;
+      left: 5px;
+      border-radius: 5px;
     }
     
-    .navbar {
-      margin-top: 19px;
-    }
   }
-  
-  @media (min-width: 768px) {
-    .menu {
-        background: none;
-    }
-    header ul {
-        flex-direction: row;
-        justify-content: end;      
-    }
-    header a, header a:hover {
-        color: #d3de32;
-        font-size: 1em;
-    }
-    header a:hover {
-        color: #ffffdd;
-    }    
-    main {
-        padding-top: 116px;
-    }
 
-    @media (min-width: 981px) {
-        header {
-            font-size: 1.2em;
-        }
-    }
-
-    /* Paramètres pour l'impression du jardin */
-    
-    @media print {
-      header, footer, #plantes, #print, #pdfSave, img, form {
-        display: none !important;
-      }
-      .mainmodele .td {
-        width: 100px;
-        height: 100px;
-      }
-
-      .hoverTexte {
-        display: block;
-        z-index: 1000;
-        width: 90px;
-        position: relative;
-        top: 40px;
-        left: 5px;
-        border-radius: 5px;
-      }
-      
-    }
-
-  }
+}

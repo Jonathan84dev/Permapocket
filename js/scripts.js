@@ -1,7 +1,4 @@
-
 console.log(jQuery);
-
-
 
 jQuery(document).ready(($) => {
   // Sur la page gardencreation.html:
@@ -57,7 +54,7 @@ jQuery(document).ready(($) => {
     ],
   };
 
-  //Fonction de sauvegarde du jardin: 
+  //Fonction de sauvegarde en json du jardin: 
   const sauvegarde = (() => {
     const data = { a: document.getElementById("grilleDeJardin").innerHTML };
     const json = JSON.stringify(data);
@@ -87,7 +84,8 @@ jQuery(document).ready(($) => {
           "flex-nowrap",
           "justify-content-center",
           "align-items-center",
-          "m-0"
+          "m-0",
+          "pl-0"
         );
         newTable.prepend(newTr);
 
@@ -104,42 +102,44 @@ jQuery(document).ready(($) => {
     } else {
     }
   });
-     
-    // Affichage mobile, selection des div 
 
-let classCompteur = 0;     
-const largeurEcran = window.innerWidth;
+  // Affichage mobile, selection des div 
 
-/* if (largeurEcran < 768) {
- */
+  let classCompteur = 0;
+  const largeurEcran = window.innerWidth;
 
-if (largeurEcran < 768) {
-jQuery('.td').on('click',(e) => {
-    if (jQuery(e.currentTarget).hasClass('div_selected')) 
-    {
-      jQuery(e.currentTarget).removeClass('div_selected');
-      classCompteur--;
-    }
-    else {
-      classCompteur++;
-      jQuery(e.currentTarget).addClass('div_selected');
-    }
+  /* if (largeurEcran < 768) {
+   */
 
-    if (classCompteur >= 1) {
-      jQuery('.mobile_categories').attr( "style", "display: block")
-    }
-    else {
-    jQuery('.mobile_categories').attr( "style", "display: none")
-    }
+  if (largeurEcran < 768) {
+    jQuery('.td').on('click', (e) => {
+      if (jQuery(e.currentTarget).hasClass('div_selected')) {
+        jQuery(e.currentTarget).removeClass('div_selected');
+        classCompteur--;
+      }
+      else {
+        classCompteur++;
+        jQuery(e.currentTarget).addClass('div_selected');
+      }
 
-  })
+      if (classCompteur >= 1) {
+        jQuery('.mobile_categories').attr("style", "display: block")
+      }
+      else {
+        jQuery('.mobile_categories').attr("style", "display: none")
+      }
 
-}
+    })
+
+  }
 
   //Au clic de validation de la grille
+
   validationGrille.addEventListener("click", () => {
-     if (window.innerWidth > 768) jQuery("#modelId").modal();
+    if (window.innerWidth > 768) jQuery("#modelId").modal();
+
     //Création de la liste des plantes
+
     const newRight = document.createElement("div");
     newRight.setAttribute("id", "right");
     newRight.setAttribute("class", "grid");
@@ -157,14 +157,16 @@ jQuery('.td').on('click',(e) => {
     </figure>`;
       }
     }
+
     //Insertion de la div contenant les plantes après les boutons de tris
-    document.getElementById("sorts").after(newRight);
+    document.getElementById("triButton").after(newRight);
 
 
     //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
     majFirstLetter(figcaption);
     majFirstLetter(hoverTexte);
+
     //Au clic de validation de grille: apparition de la div contenant les imagges
     document.getElementById("plantes").classList.add("d-block");
 
@@ -179,6 +181,7 @@ jQuery('.td').on('click',(e) => {
     //apparition des boutons d'impression et de sauvegarde
     document.getElementById("print").classList.add("d-block");
     document.getElementById("pdfSave").classList.add("d-block");
+ document.getElementById("pdf").classList.add("d-block");
 
     //apparition de la modale d'explication
     document
@@ -223,7 +226,7 @@ jQuery('.td').on('click',(e) => {
       }
     });
     //on drop event, if target container is already full, old image is removed
-    // drake.on("drop", function (el, target, source, sibling) {
+    
     drake.on("drop", (el, target, source, sibling) => {
       // console.log('tada');
       // console.log(el);
@@ -255,5 +258,6 @@ jQuery('.td').on('click',(e) => {
 
   $("#pdfSave").on('click', () => sauvegarde());
 
+  //import json
 
 });
