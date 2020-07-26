@@ -49,11 +49,11 @@ header h1 {
 
 /*** Couleurs de police ***/
 
-header, button, #generation, .bars, .button, .button:hover, .grid-item, footer a:hover {
+header, button, #generation, .bars, .input-group-append label, .button, .button:hover, .grid-item, footer a:hover {
   color: #d3de32;
 }
 
-body, header a, .hoverTexte, .button.is-checked {
+body, header a, label, select, .hoverTexte, .button.is-checked {
   color: #006a71;
 }
 
@@ -67,7 +67,7 @@ body, .navbar-toggler {
   background: #EEEEEE;
 }
 
-header, button, #generation, .button, .grid-item {
+header, button, #generation, .input-group-append label, .button, .grid-item {
   background: #006a71;
 }
 
@@ -102,8 +102,9 @@ header img {
 }
 
 header li {
-  font-size: 1em;
-  font-weight: 600;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 2em;
 }
 
 .navbar-toggler {
@@ -124,7 +125,7 @@ nav button:focus {
   outline: none;
 }
 .navbar {
-  margin-top: 28px;
+  margin-top: 27px;
 }
 /*Main*/
 
@@ -372,16 +373,14 @@ footer img {
       min-height: calc(100vh - 100px);
       padding-top: 180px
   }
-  /* header {
-      height: 100px;
-  } */
+ 
   header img {
       width: 80px;
       height: 100%;
   }
   
   .navbar {
-    margin-top: 19px;
+    margin-top: 18px;
   }
 }
 
@@ -393,6 +392,12 @@ footer img {
       flex-direction: row;
       justify-content: end;      
   }
+
+  header li {
+    font-size:1em;
+    font-weight: bold;
+  }
+
   header a, header a:hover {
       color: #d3de32;
       font-size: 1em;
@@ -403,6 +408,8 @@ footer img {
   main {
       padding-top: 116px;
   }
+
+
 
   @media (min-width: 981px) {
       header {

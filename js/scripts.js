@@ -54,17 +54,27 @@ jQuery(document).ready(($) => {
     ],
   };
 
-  //Fonction de sauvegarde en json du jardin: 
+  //Fonction de sauvegarde en json du jardin créé: 
   const sauvegarde = (() => {
     const data = { a: document.getElementById("grilleDeJardin").innerHTML };
     const json = JSON.stringify(data);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const lien = document.getElementById('lienSave');
+    const lien = document.getElementById('jsonSaveLink');
     lien.setAttribute('download', "monJardin.json");
     lien.setAttribute('href', url);
   });
 
+  const sauvegardeModele2 = (() => {
+    const data = { a: document.getElementById("modele2").innerHTML };
+    const json = JSON.stringify(data);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const lien = document.getElementById('jsonModele2Link');
+    lien.setAttribute('download', "JardinDeSaison.json");
+    lien.setAttribute('href', url);
+  });
+  $("#jsonSaveModele2").on('click', () => sauvegardeModele2());
 
   //Récupération des données du formulaire: au click, génération de la grille
 
@@ -135,7 +145,8 @@ jQuery(document).ready(($) => {
 
   //Au clic de validation de la grille
 
-  validationGrille.addEventListener("click", () => {
+  validationGrille.addEventListener("click", (e) => {
+    e.preventDefault();
     if (window.innerWidth > 768) jQuery("#modelId").modal();
 
     //Création de la liste des plantes
@@ -180,7 +191,7 @@ jQuery(document).ready(($) => {
 
     //apparition des boutons d'impression et de sauvegarde
     document.getElementById("print").classList.add("d-block");
-    document.getElementById("pdfSave").classList.add("d-block");
+    document.getElementById("jsonSave").classList.add("d-block");
  document.getElementById("pdf").classList.add("d-block");
 
     //apparition de la modale d'explication
@@ -256,7 +267,9 @@ jQuery(document).ready(($) => {
 
   //Sauvegarde sur le pc au format json d'un jardin:
 
-  $("#pdfSave").on('click', () => sauvegarde());
+  $("#jsonSave").on('click', () => sauvegarde());
+ 
+  
 
   //import json
 
