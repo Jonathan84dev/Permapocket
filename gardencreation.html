@@ -63,12 +63,15 @@
                 <button class="btn btn-outline-success">Légumes</button>
                 <button class="btn btn-outline-success">Herbes</button>
             </p>
+            
+          
             <form action="#" method="get" class="p-0 col-12 col-md-5" id="formulaire">
-
+                         <H1 class="col-12 h3 text-center mb-2">Dessinez votre jardin: </H1>
+                         <fieldset class="mt-5">
                 <div class="input-group mb-3">
-                    <label for="largeur" class="col-12">Largeur: </label>
+                    <label for="largeur" class="col-12 font-weight-bold">Largeur: </label>
 
-                    <select class="custom-select col-12" id="largeur">
+                    <select class="custom-select col-12 " id="largeur">
                         <option selected>Sélectionnez la largeur de votre jardin</option>
                         <option value="1">0,20</option>
                         <option value="2">0,40</option>
@@ -88,12 +91,12 @@
                     </select>
 
                     <div class="input-group-append">
-                        <label class="input-group-text" for="largeur">m</label>
+                        <label class="input-group-text font-weight-bold" for="largeur">m</label>
                     </div>
                 </div>
 
                 <div class="input-group mb-3 w-100">
-                    <label for="longueur" class="col-12">Longueur: </label>
+                    <label for="longueur" class="col-12 font-weight-bold">Longueur: </label>
                     <select class="custom-select" id="longueur">
                         <option selected>Sélectionnez la longueur de votre jardin</option>
                         <option value="1">0,20</option>
@@ -113,12 +116,12 @@
                         <option value="15">3</option>
                     </select>
                     <div class="input-group-append">
-                        <label class="input-group-text" for="longueur">m</label>
+                        <label class="input-group-text font-weight-bold" for="longueur">m</label>
                     </div>
                 </div>
                 <div class="text-right">
                     <input id="generation" type="submit" value="Valider">
-                </div>
+                </div></fieldset>
             </form>
 
             <div id="creationTable" class="table d-none col-12 col-md-7 m-0 p-0">
@@ -129,7 +132,7 @@
                 </div>
                 <div class='d-flex justify-content-center mt-4'>
                     <button id="print" class='imprimer d-none mx-3' onClick="window.print()">Imprimer</button>
-                    <a id="lienSave"> <button id="pdfSave" class='pdfSave d-none mx-3'>Sauvegarder</button> </a>
+                    <a id="jsonSaveLink"> <button id="jsonSave" class='pdfSave d-none mx-3'>Sauvegarder</button> </a>
                     <a id="lienpdf" download="monJardin.pdf"> <button id="pdf" class='pdfSave d-none mx-3'>pdf</button>
                     </a>
                 </div>
