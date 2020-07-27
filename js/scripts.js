@@ -217,58 +217,80 @@ jQuery(document).ready(($) => {
         document.getElementById("mobile_categories").addEventListener('click', () => {
           jQuery("#presentationPlanteMobile").modal();
 
-                 const mobilePlanteTable = document.createElement("div");
-          mobilePlanteTable.setAttribute("id", "mobilePlanteTable");
-          mobilePlanteTable.setAttribute("class", "container");
-          const plantesListeMobile = document.getElementById("plantesListeMobile");
-                  
 
-          for (let plante in plantes) {
+         for (let plante in plantes) {
+
             // pour chaque type de plante, on crée une div 
             const planteTable = document.createElement('div');
             planteTable.setAttribute("id", plante + "Mobile");
-            planteTable.setAttribute("class", "grid");
+            planteTable.setAttribute("class", "container");
+            planteTable.classList.add("row", "justify-content-start", "p-0", "pl-2", "m-0");
 
-            // console.log(mobilePlanteTable.innerHTML);
             // pour chaque plante d'un certain type, on crée une figure qui entre dans la div du type de la plante
             for (let j = 0; j < plantes[plante].length; j++) {
 
 
-              // planteTable.innerHTML = planteTable.innerHTML +
+            // planteTable.innerHTML = planteTable.innerHTML +
               planteTable.innerHTML = planteTable.innerHTML +
                 `<figure class="m-1 grid-item ${plante}"><div class="text-center"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
-           alt="${plantes[plante][j]}" class="plante">
+           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span>
        <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption> </div>   
        </figure>`;
-       
-      //  console.log(planteTable.plante);  //undefined
-      //  console.log(planteTable[plante]); //met toutes les figures à la suite
-              
-       
-            }
-        
-            console.log(planteTable);
 
-
-      //  mobilePlanteTable.innerHTML =   mobilePlanteTable.innerHTML + planteTable.after( planteTable); 
-      // mobilePlanteTable.innerHTML =  planteTable; 
-      //  mobilePlanteTable.innerHTML =  planteTable + after( planteTable); 
-       mobilePlanteTable.innerHTML =  mobilePlanteTable.innerHTML + planteTable.innerHTML; 
-          
-            //Insertion de la div contenant les plantes dans la modale de selection des plantes    
-         
-        // console.log(mobilePlanteTable);
-        plantesListeMobile.innerHTML= mobilePlanteTable;
-          }     
-
-
-      
-      console.log(plantesListeMobile.innerHTML);
+            }   
+          //Insertion de la div contenant les plantes dans la modale de selection des plantes 
+            document.getElementById("spanVide").after(planteTable);
+     
+          }
+           
           //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
           majFirstLetter(figcaption);
 
-        });
+        
+        
+         //mise en forme et gestion images slick:
+
+        $('#plantesListeMobile').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 1200,
+        dots:true, // faire apparaitre les points pour le défilement
+        accessibility:true, // option d'accessibilité : active le défilement via les touches du clavier (gauche/droite) et la touche de sélection TAB
+        swipe : true, // faire glisser avec la souris
+        touchThreshold :10, // si swipe = true, détermine la longueur du swipe nécessaire pour activer le défilement selon la règle :  (1/touchThreshold) * the width of the slider
+        responsive: [ // gestion du responsive
+          {
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+            }
+          },
+          // {
+         
+          //   settings: {
+          //     slidesToShow: 1,
+          //     slidesToScroll: 2,
+          //     dots: true
+          //   }
+          // },
+          // {
+            
+          //   settings: {
+          //     slidesToShow: 1,
+          //     slidesToScroll: 1,
+          //     dots: true
+          //   }
+          // }
+        ]
+       });
+       });
+
+      
+
 
       });
 
