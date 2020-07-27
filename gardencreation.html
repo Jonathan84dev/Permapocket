@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+    <!-- header  -->
     <header class="container-fluid col-12 fixed-top ">
 
         <div class="row justify-content-start">
@@ -53,76 +53,83 @@
             </nav>
         </div>
     </header>
+    <!-- fin du header  -->
 
-
+    <!-- main -->
     <main class="mainmodele position-relative d-flex align-content-center pt-0">
         <div class="container row m-0 justify-content-center align-items-center col-12">
-            <!-- Version Mobile : 3 boutons des catégories fruits/légumes/herbes  -->
-            <p class="mobile_categories">
-                <button class="btn btn-outline-success">Fruits</button>
-                <button class="btn btn-outline-success">Légumes</button>
-                <button class="btn btn-outline-success">Herbes</button>
-            </p>
-            
-          
+
+            <!-- formulaire pour la taille du jardin  -->
             <form action="#" method="get" class="p-0 col-12 col-md-5" id="formulaire">
-                         <H1 class="col-12 h3 text-center mb-2">Dessinez votre jardin: </H1>
-                         <fieldset class="mt-5">
-                <div class="input-group mb-3">
-                    <label for="largeur" class="col-12 pl-1 font-weight-bold">Largeur de votre jardin: </label>
-                    
-                    <select class="custom-select col-12" id="largeur">
-                        <option selected>0</option>
-                        <option value="1">0,20</option>
-                        <option value="2">0,40</option>
-                        <option value="3">0,60</option>
-                        <option value="4">0,80</option>
-                        <option value="5">1,00</option>
-                        <option value="6">1,20</option>
-                        <option value="7">1,40</option>
-                        <option value="8">1,60</option>
-                        <option value="9">1,80</option>
-                        <option value="10">2,0</option>
-                        <option value="11">2,20</option>
-                        <option value="12">2,40</option>
-                        <option value="13">2,60</option>
-                        <option value="14">2,80</option>
-                        <option value="15">3</option>
-                    </select>
+                <H1 class="col-12 h3 text-center mb-2">Dessinez votre jardin: </H1>
+                <fieldset class="mt-5">
+                    <div class="input-group mb-3">
+                        <label for="largeur" class="col-12 pl-1 font-weight-bold">Largeur de votre jardin: </label>
 
-                    <div class="input-group-append">
-                        <label class="input-group-text font-weight-bold" for="largeur">mètres</label>
-                    </div>
-                </div>
+                        <select class="custom-select col-12" id="largeur">
+                            <option selected>0</option>
+                            <option value="1">0,20</option>
+                            <option value="2">0,40</option>
+                            <option value="3">0,60</option>
+                            <option value="4">0,80</option>
+                            <option value="5">1,00</option>
+                            <option value="6">1,20</option>
+                            <option value="7">1,40</option>
+                            <option value="8">1,60</option>
+                            <option value="9">1,80</option>
+                            <option value="10">2,0</option>
+                            <option value="11">2,20</option>
+                            <option value="12">2,40</option>
+                            <option value="13">2,60</option>
+                            <option value="14">2,80</option>
+                            <option value="15">3</option>
+                        </select>
 
-                <div class="input-group mb-3 w-100">
-                    <label for="longueur" class="col-12 pl-1 font-weight-bold">Longueur de votre jardin: </label>
-                    <select class="custom-select" id="longueur">
-                        <option selected>0</option>
-                        <option value="1">0,20</option>
-                        <option value="2">0,40</option>
-                        <option value="3">0,60</option>
-                        <option value="4">0,80</option>
-                        <option value="5">1,00</option>
-                        <option value="6">1,20</option>
-                        <option value="7">1,40</option>
-                        <option value="8">1,60</option>
-                        <option value="9">1,80</option>
-                        <option value="10">2,0</option>
-                        <option value="11">2,20</option>
-                        <option value="12">2,40</option>
-                        <option value="13">2,60</option>
-                        <option value="14">2,80</option>
-                        <option value="15">3</option>
-                    </select>
-                    <div class="input-group-append">
-                        <label class="input-group-text font-weight-bold" for="longueur">mètres</label>
+                        <div class="input-group-append">
+                            <label class="input-group-text font-weight-bold" for="largeur">mètres</label>
+                        </div>
                     </div>
-                </div>
-                <div class="text-right">
-                    <input id="generation" type="submit" value="Valider">
-                </div></fieldset>
+
+                    <div class="input-group mb-3 w-100">
+                        <label for="longueur" class="col-12 pl-1 font-weight-bold">Longueur de votre jardin: </label>
+                        <select class="custom-select" id="longueur">
+                            <option selected>0</option>
+                            <option value="1">0,20</option>
+                            <option value="2">0,40</option>
+                            <option value="3">0,60</option>
+                            <option value="4">0,80</option>
+                            <option value="5">1,00</option>
+                            <option value="6">1,20</option>
+                            <option value="7">1,40</option>
+                            <option value="8">1,60</option>
+                            <option value="9">1,80</option>
+                            <option value="10">2,0</option>
+                            <option value="11">2,20</option>
+                            <option value="12">2,40</option>
+                            <option value="13">2,60</option>
+                            <option value="14">2,80</option>
+                            <option value="15">3</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label class="input-group-text font-weight-bold" for="longueur">mètres</label>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <input id="generation" type="submit" value="Valider">
+                    </div>
+                </fieldset>
             </form>
+            <!-- fin du formulaire  -->
+
+            <!-- Version Mobile : 3 boutons des catégories fruits/légumes/herbes  -->
+            <p id="mobile_categories"class="mobile_categories mt-3">
+                <button id="mobile_fruits">Fruits</button>
+                <button id="mobile_legumes">Légumes</button>
+                <button id="mobile_herbes">Herbes</button>
+            </p>
+            <!--fin des boutons catégories version mobile-->
+
+            <!-- grille du jardin desktop et mobile -->
 
             <div id="creationTable" class="table d-none col-12 col-md-7 m-0 p-0">
 
@@ -130,18 +137,86 @@
                     <a href="gardencreation.html"><button id="retourCreation">Modifier</button></a>
                     <button id="validationGrille" class="ml-2">Valider</button>
                 </div>
-                <div class='d-flex justify-content-center mt-4'>
-                    <button id="print" class='imprimer d-none mx-3' onClick="window.print()">Imprimer</button>
-                    <a id="jsonSaveLink"> <button id="jsonSave" class='pdfSave d-none mx-3'>Sauvegarder</button> </a>
-                    <a id="lienpdf" download="monJardin.pdf"> <button id="pdf" class='pdfSave d-none mx-3'>pdf</button>
-                    </a>
+
+                <!-- groupe de boutons pour sauvegarder ou imprimer le jardin  -->
+                <div id="linkBlock" class='d-flex row justify-content-center mt-4'>
+                    <a class="inline-block col-10 col-md-4 p-0 my-md-1"> <button id="print"
+                            class='imprimer d-none col-12  mx-0  text-center'
+                            onClick="window.print()">Imprimer</button></a>
+                    <a id="jsonSaveLink" class="inline-block col-10 offset-md-1 col-md-4  p-0 my-1 "> <button
+                            id="jsonSave" class='  col-12 pdfSave d-none mx-0 ml-md-3'>Sauvegarder</button> </a>
+                    <a id="lienpdf" class="inline-block  col-10 col-md-4 mb-1  p-0" download="monJardin.pdf"> <button
+                            id="pdf" class=' col-12 pdfSave d-none '>pdf</button> </a>
+                    <a class="inline-block  col-10  offset-md-1 col-md-4  p-0 my-1"> <button id="toGardenCreation"
+                            class='col-12 pdfSave  mx-0 ml-md-3 d-none'>Accueil</button></a>
+                </div>
+                <!-- fin du groupe de boutons -->
+            </div>
+            <!--fin de la grille du jardin-->
+
+<!-- Version Mobile: plantes et modale d'explication -->
+<div id="plantesMobile" class="container col-md-5 d-none text-center py-3"></div>
+<!-- modale d'explication Mobile -->
+
+    <div class="explicationVersionMobile modal fade" id="mobileModalExplication" tabindex="-1" role="dialog"
+        aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Comment ça marche ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <p>-Sélectionnez les cases qui contiendront les mêmes plantes.
+                        </p>
+                        <p>-cliquez sur le bouton plante et sélectionner la plante voulue</p>
+                        <p>-Les cases se remplissent automatiquement</p>
+                        <p>-Pour vider une case, double-cliquez dessus</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal">Fermer</button>
                 </div>
             </div>
+        </div>
+    </div>
+<!-- fin modale d'explication -->
 
+<!-- modale plante -->
+<div class="explicationVersionMobile modal fade" id="presentationPlanteMobile" tabindex="-1" role="dialog"
+aria-labelledby="modelTitleId" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Choisissez une plante</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="plantesListeMobile"class="container-fluid">
+              
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal">Fermer</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- fin modale plante -->
+
+
+
+            <!-- Version desktop: contient les plantes et la modale d'explication du desktop -->
             <div id="plantes" class="container col-md-5 d-none text-center py-3">
 
 
-                <!-- Modal -->
+                <!-- Modal d'explication Desktop-->
                 <div class="explicationVersionDesktop modal fade" id="modelId" tabindex="-1" role="dialog"
                     aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -168,7 +243,9 @@
                         </div>
                     </div>
                 </div>
+<!-- fin de la modale -->
                 <!-- Isotope -->
+
                 <!-- <h2 class="h2Isotope">Filtrer</h2> -->
                 <div id="filters" class="mx-0 button-group filter-button-group row justify-content-center">
                     <button class="buttonAll button is-checked" data-filter="*">Tout voir</button>
@@ -186,11 +263,15 @@
                         <button class="button ml-1" data-sort-by="name">Tri par Nom</button>
                     </div>
                 </div>
+                <!-- fin des boutons de tri d'isotope -->
+
                 <!--a cet endroit: génération de la liste des plantes-->
 
             </div>
         </div>
     </main>
+
+    <!-- footer -->
 
     <footer id="footer" class="container-fluid">
         <div class="row align-items-center justify-content-center">
@@ -217,6 +298,10 @@
         </div>
     </footer>
 
+    <!-- fin du footer -->
+
+    <!-- liste des scripts -->
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -235,6 +320,8 @@
     <!-- scripts internes -->
     <script src="js/scriptsIsotop.js"></script>
     <script src="js/scripts.js"></script>
+
+    <!-- fin des scripts -->
 
 </body>
 
