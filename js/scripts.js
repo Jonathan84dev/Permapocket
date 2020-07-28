@@ -217,7 +217,7 @@ jQuery(document).ready(($) => {
         document.getElementById("mobile_categories").addEventListener('click', () => {
           jQuery("#presentationPlanteMobile").modal();
 
-                 const mobilePlanteTable = document.createElement("div");
+          const mobilePlanteTable = document.createElement("div");
           mobilePlanteTable.setAttribute("id", "mobilePlanteTable");
           mobilePlanteTable.setAttribute("class", "container");
           const plantesListeMobile = document.getElementById("plantesListeMobile");
@@ -236,47 +236,49 @@ jQuery(document).ready(($) => {
 
               // planteTable.innerHTML = planteTable.innerHTML +
               planteTable.innerHTML = planteTable.innerHTML +
-                `<figure class="m-1 grid-item ${plante}"><div class="text-center"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
-           alt="${plantes[plante][j]}" class="plante">
-       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption> </div>   
+                `<figure class=" m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
+           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
+       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
        </figure>`;
-       
-      //  console.log(planteTable.plante);  //undefined
-      //  console.log(planteTable[plante]); //met toutes les figures à la suite
               
-       
             }
-        
-            console.log(planteTable);
 
-
-      //  mobilePlanteTable.innerHTML =   mobilePlanteTable.innerHTML + planteTable.after( planteTable); 
-      // mobilePlanteTable.innerHTML =  planteTable; 
-      //  mobilePlanteTable.innerHTML =  planteTable + after( planteTable); 
        mobilePlanteTable.innerHTML =  mobilePlanteTable.innerHTML + planteTable.innerHTML; 
           
             //Insertion de la div contenant les plantes dans la modale de selection des plantes    
          
-        // console.log(mobilePlanteTable);
-        plantesListeMobile.innerHTML= mobilePlanteTable;
+        plantesListeMobile.innerHTML= mobilePlanteTable.innerHTML;
           }     
 
-
-      
-      console.log(plantesListeMobile.innerHTML);
-          //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
+        //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
           majFirstLetter(figcaption);
 
-        });
+        // sélection de la plante cliquée : 
+     jQuery('.selection_plante').on('click',(e) =>{
+     jQuery(e.currentTarget).addClass("ma_selection");
+      const cases_cochees = jQuery('.div_selected');
 
+      for (let i of cases_cochees) {
+       
+        console.log(jQuery('.selection_plante').html());
+        cases_cochees.html(jQuery(e.currentTarget).html());
+        jQuery('.div_selected').removeClass('div_selected');
+        $('presentationPlanteMobile').on('hidden.bs.modal');
+  
+      }
+ 
       });
 
+      });
+   
+   /*  const planteSelect = jQuery('#plantesListeMobile').children('figure');
+    console.log(planteSelect); */
+
+
+     })
 
     }
-
-
-
 
     //disparition des boutons la page précédente
     returnCreation.classList.add("d-none");

@@ -205,7 +205,8 @@ button, #generation {
 /* selection des div en mode mobile */
 .div_selected {
   background-color:#d3de32;
-}
+  border: 8px solid #d3de32 !important;
+ }
 
 /* affichage des 3catégories fruits/légumes/herbes */
 .mobile_categories {
