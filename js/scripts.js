@@ -292,13 +292,13 @@ jQuery(document).ready(($) => {
             for (let j = 0; j < plantes[plante].length; j++) {
 
               planteTable.innerHTML = planteTable.innerHTML +
-                `<figure class="m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
-           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span>
-       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption> </div>   
+
+                `<figure class=" m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
+           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
+       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
        </figure>`;
+              
             }
-            console.log(planteTable);
-           //Insertion des div contenant les plantes dans la modale de selection des plantes 
            
           // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
          document.getElementById("spanVide").after(planteTable); 
@@ -353,26 +353,33 @@ jQuery(document).ready(($) => {
           //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
           majFirstLetter(figcaption);
-
-          jQuery('.selection_plante').on('click',(e) =>{
-            jQuery(e.currentTarget).addClass("ma_selection");
-            
-             const cases_cochees = jQuery('.div_selected');
           
-             for (let i of cases_cochees) {
-            
- 
-//              jQuery(e.currentTarget).clone().appendTo(jQuery(e.currentTarget));
-// console.log(  jQuery(e.currentTarget));
-     jQuery(e.currentTarget).appendTo(jQuery(e.currentTarget).clone());
-            cases_cochees.html(jQuery(e.currentTarget));   //fonctionne mais enlève l'image du tableau de plante
+        // sélection de la plante cliquée : 
+     jQuery('.selection_plante').on('click',(e) =>{
+     jQuery(e.currentTarget).addClass("ma_selection");
+      const cases_cochees = jQuery('.div_selected');
+
+      for (let i of cases_cochees) {
        
-
-             }});
-
-        });
+        console.log(jQuery('.selection_plante').html());
+        cases_cochees.html(jQuery(e.currentTarget).html());
+        jQuery('.div_selected').removeClass('div_selected');
+        $('presentationPlanteMobile').on('hidden.bs.modal');
+  
+      }
+ 
       });
+
+      });
+   
+   /*  const planteSelect = jQuery('#plantesListeMobile').children('figure');
+    console.log(planteSelect); */
+
+
+     })
+
     }
+
 
     //disparition des boutons la page précédente
     returnCreation.classList.add("d-none");
