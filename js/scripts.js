@@ -181,120 +181,8 @@ jQuery(document).ready(($) => {
         document.getElementById("modelId").classList.remove("d-block");
       });
 
-    };
 
-    /***** LARGEUR MOBILE ********/
-
-    if (largeurEcran <= 768) {
-      // alert('Cliquez sur les cases puis choisissez vos plantes pour les remplir automatiquement.');
-      jQuery("#mobileModalExplication").modal();
-      jQuery('.td').on('click', (e) => {
-        if (jQuery(e.currentTarget).hasClass('div_selected')) {
-          jQuery(e.currentTarget).removeClass('div_selected');
-          classCompteur--;
-        }
-        else {
-          classCompteur++;
-          jQuery(e.currentTarget).addClass('div_selected');
-        };
-
-        if (classCompteur >= 1) {
-          jQuery('.mobile_categories').attr("style", "display: block");
-        }
-        else {
-          jQuery('.mobile_categories').attr("style", "display: none");
-        };
-
-        //apparition de la modale d'explication
-        document.getElementsByClassName("explicationVersionMobile")[0].classList.add("d-block");
-
-        //au clic sur les boutons de la modale ou en-dehors, disparition de la modale
-        document.getElementById("mobileModalExplication").addEventListener("click", () => {
-          document.getElementById("mobileModalExplication").classList.remove("d-block");
-        });
-
-        //génération de la liste des plantes Mobile
-        document.getElementById("mobile_categories").addEventListener('click', () => {
-          jQuery("#presentationPlanteMobile").modal();
-
-          const mobilePlanteTable = document.createElement("div");
-          mobilePlanteTable.setAttribute("id", "mobilePlanteTable");
-          mobilePlanteTable.setAttribute("class", "container");
-          const plantesListeMobile = document.getElementById("plantesListeMobile");
-                  
-
-          for (let plante in plantes) {
-            // pour chaque type de plante, on crée une div 
-            const planteTable = document.createElement('div');
-            planteTable.setAttribute("id", plante + "Mobile");
-            planteTable.setAttribute("class", "grid");
-
-            // console.log(mobilePlanteTable.innerHTML);
-            // pour chaque plante d'un certain type, on crée une figure qui entre dans la div du type de la plante
-            for (let j = 0; j < plantes[plante].length; j++) {
-
-
-              // planteTable.innerHTML = planteTable.innerHTML +
-              planteTable.innerHTML = planteTable.innerHTML +
-                `<figure class=" m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
-           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
-       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
-       </figure>`;
-              
-            }
-
-       mobilePlanteTable.innerHTML =  mobilePlanteTable.innerHTML + planteTable.innerHTML; 
-          
-            //Insertion de la div contenant les plantes dans la modale de selection des plantes    
-         
-        plantesListeMobile.innerHTML= mobilePlanteTable.innerHTML;
-          }     
-
-        //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
-
-          majFirstLetter(figcaption);
-
-        // sélection de la plante cliquée : 
-     jQuery('.selection_plante').on('click',(e) =>{
-     jQuery(e.currentTarget).addClass("ma_selection");
-      const cases_cochees = jQuery('.div_selected');
-
-      for (let i of cases_cochees) {
-       
-        console.log(jQuery('.selection_plante').html());
-        cases_cochees.html(jQuery(e.currentTarget).html());
-        jQuery('.div_selected').removeClass('div_selected');
-        $('presentationPlanteMobile').on('hidden.bs.modal');
-  
-      }
- 
-      });
-
-      });
-   
-   /*  const planteSelect = jQuery('#plantesListeMobile').children('figure');
-    console.log(planteSelect); */
-
-
-     })
-
-    }
-
-    //disparition des boutons la page précédente
-    returnCreation.classList.add("d-none");
-    validationGrille.classList.add("d-none");
-
-    //apparition des boutons d'impression et de sauvegarde
-    document.getElementById("print").classList.add("d-block");
-    document.getElementById("jsonSave").classList.add("d-block");
-    document.getElementById("pdf").classList.add("d-block");
-    document.getElementById("toGardenCreation").classList.add("d-block");
-
-
-
-  });
-
-  //Dragula
+//Dragula
 
   //initialise drake
   var drake = dragula({ copy: true });
@@ -352,6 +240,161 @@ jQuery(document).ready(($) => {
       drake.remove();
     }
   });
+
+
+
+    };
+
+    /***** LARGEUR MOBILE ********/
+
+    if (largeurEcran <= 768) {
+      // alert('Cliquez sur les cases puis choisissez vos plantes pour les remplir automatiquement.');
+      jQuery("#mobileModalExplication").modal();
+      jQuery('.td').on('click', (e) => {
+        if (jQuery(e.currentTarget).hasClass('div_selected')) {
+          jQuery(e.currentTarget).removeClass('div_selected');
+          classCompteur--;
+        }
+        else {
+          classCompteur++;
+          jQuery(e.currentTarget).addClass('div_selected');
+        };
+
+        if (classCompteur >= 1) {
+          jQuery('.mobile_categories').attr("style", "display: block");
+        }
+        else {
+          jQuery('.mobile_categories').attr("style", "display: none");
+        };
+
+        //apparition de la modale d'explication
+        document.getElementsByClassName("explicationVersionMobile")[0].classList.add("d-block");
+
+        //au clic sur les boutons de la modale ou en-dehors, disparition de la modale
+        document.getElementById("mobileModalExplication").addEventListener("click", () => {
+          document.getElementById("mobileModalExplication").classList.remove("d-block");
+        });
+
+        //génération de la liste des plantes Mobile
+        document.getElementById("mobile_categories").addEventListener('click', () => {
+          jQuery("#presentationPlanteMobile").modal();
+
+
+         for (let plante in plantes) {
+
+            // pour chaque type de plante, on crée une div 
+            const planteTable = document.createElement('div');
+            planteTable.setAttribute("id", plante + "Mobile");
+             planteTable.setAttribute("class", "container");
+             planteTable.classList.add("row",  "justify-content-start", "p-0", "pl-2", "m-0");
+
+            // pour chaque plante d'un certain type, on crée une figure qui entre dans la div du type de la plante
+            for (let j = 0; j < plantes[plante].length; j++) {
+
+              planteTable.innerHTML = planteTable.innerHTML +
+
+                `<figure class=" m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
+           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
+       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
+       </figure>`;
+              
+            }
+           
+          // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
+         document.getElementById("spanVide").after(planteTable); 
+          //  document.getElementById("plantesListeMobile").after(planteTable);
+          //   console.log(document.getElementById("plantesListeMobile"));
+           } 
+          
+
+   //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
+
+   majFirstLetter(figcaption);        
+       //mise en forme et gestion images slick:
+
+          $('#plantesListeMobile').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1200,
+            dots: true, // faire apparaitre les points pour le défilement
+            accessibility: true, // option d'accessibilité : active le défilement via les touches du clavier (gauche/droite) et la touche de sélection TAB
+            swipe: true, // faire glisser avec la souris
+            touchThreshold: 10, // si swipe = true, détermine la longueur du swipe nécessaire pour activer le défilement selon la règle :  (1/touchThreshold) * the width of the slider
+            responsive: [ // gestion du responsive
+              // {
+              //   settings: {
+              //     slidesToShow: 1,
+              //     slidesToScroll: 1,
+              //     infinite: true,
+              //     dots: true
+              //   }
+              // },
+              // {
+        
+              //   settings: {
+              //     slidesToShow: 1,
+              //     slidesToScroll: 2,
+              //     dots: true
+              //   }
+              // },
+              // {
+        
+              //   settings: {
+              //     slidesToShow: 1,
+              //     slidesToScroll: 1,
+              //     dots: true
+              //   }
+              // }
+            ]
+          });
+          
+
+          //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
+
+          majFirstLetter(figcaption);
+          
+        // sélection de la plante cliquée : 
+     jQuery('.selection_plante').on('click',(e) =>{
+     jQuery(e.currentTarget).addClass("ma_selection");
+      const cases_cochees = jQuery('.div_selected');
+
+      for (let i of cases_cochees) {
+       
+        console.log(jQuery('.selection_plante').html());
+        cases_cochees.html(jQuery(e.currentTarget).html());
+        jQuery('.div_selected').removeClass('div_selected');
+        $('presentationPlanteMobile').on('hidden.bs.modal');
+  
+      }
+ 
+      });
+
+      });
+   
+   /*  const planteSelect = jQuery('#plantesListeMobile').children('figure');
+    console.log(planteSelect); */
+
+
+     })
+
+    }
+
+
+    //disparition des boutons la page précédente
+    returnCreation.classList.add("d-none");
+    validationGrille.classList.add("d-none");
+
+    //apparition des boutons d'impression et de sauvegarde
+    document.getElementById("print").classList.add("d-block");
+    document.getElementById("jsonSave").classList.add("d-block");
+    document.getElementById("pdf").classList.add("d-block");
+    document.getElementById("toGardenCreation").classList.add("d-block");
+
+
+
+  });
+
 
 
   //Sauvegarde sur le pc au format json d'un jardin:
