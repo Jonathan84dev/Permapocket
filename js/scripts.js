@@ -54,6 +54,8 @@ jQuery(document).ready(($) => {
       "sauge",
     ],
   };
+  let classCompteur = 0;
+  const largeurEcran = window.innerWidth;
 
   //Fonction de sauvegarde en json du jardin créé: 
   const sauvegarde = (() => {
@@ -114,19 +116,7 @@ jQuery(document).ready(($) => {
     }
   });
 
-  // Affichage mobile, selection des div 
 
-  let classCompteur = 0;
-  const largeurEcran = window.innerWidth;
-
-  /* if (largeurEcran < 768) {
-   */
-
-  // if (largeurEcran < 768) {
-
-
-
-  // }
 
   //Au clic de validation de la grille
 
@@ -134,7 +124,7 @@ jQuery(document).ready(($) => {
     e.preventDefault();
 
     /*****LARGEUR DESKTOP ******/
-    if (largeurEcran > 768) {
+    if (largeurEcran >= 768) {
 
       jQuery("#modelId").modal();
 
@@ -182,64 +172,64 @@ jQuery(document).ready(($) => {
       });
 
 
-//Dragula
+      //Dragula
 
-  //initialise drake
-  var drake = dragula({ copy: true });
-  //get the td's and figures element
-  const td = document.getElementsByClassName("td");
-  const figures = document.getElementsByTagName("figure");
+      //initialise drake
+      var drake = dragula({ copy: true });
+      //get the td's and figures element
+      const td = document.getElementsByClassName("td");
+      const figures = document.getElementsByTagName("figure");
 
-  //push td's and figure's elements into drake's container
-  const tableauTd = [];
-  for (let i in td) {
-    drake.containers.push(td[i]);
-    tableauTd.push(td[i]);
-  }
-
-  for (let j in figures) {
-    drake.containers.push(figures[j]);
-  }
-
-
-  //permet de vider une case du jardin de son contenu si on veut repositionner l'élément
-  drake.containers.push(tableauTd);
-  let effacer = dragula(tableauTd, { removeOnSpill: true });
-
-  //empêche de faire un drag de l'élément figcaption
-  drake.on("drag", function (el, target, source) {
-    if (el.tagName === "FIGCAPTION") {
-      console.log(el.tagName);
-      drake.cancel();
-    }
-  });
-  //on drop event, if target container is already full, old image is removed
-
-  drake.on("drop", (el, target, source, sibling) => {
-    // console.log('tada');
-    // console.log(el);
-    // console.log(target);
-    // console.log(source);
-    // console.log(sibling);
-    // console.log(source.tagName);
-    // console.log(target.children.length);
-    // console.log(target.children);
-    if (target.tagName === "DIV") {
-      for (let i of target.children) {
-        if (!i.classList.contains("gu-transit")) {
-          console.log(i);
-          i.remove();
-        }
+      //push td's and figure's elements into drake's container
+      const tableauTd = [];
+      for (let i in td) {
+        drake.containers.push(td[i]);
+        tableauTd.push(td[i]);
       }
-    }
-    if (
-      (source.tagName === "DIV" || source.tagName === "FIGURE") &&
-      (target.tagName === "FIGURE" || target.tagName === "FIGCAPTION")
-    ) {
-      if (el.classList.contains("gu-transit")) console.log(el);
-      drake.remove();
-    }
-  });
+
+      for (let j in figures) {
+        drake.containers.push(figures[j]);
+      }
+
+
+      //permet de vider une case du jardin de son contenu si on veut repositionner l'élément
+      drake.containers.push(tableauTd);
+      let effacer = dragula(tableauTd, { removeOnSpill: true });
+
+      //empêche de faire un drag de l'élément figcaption
+      drake.on("drag", function (el, target, source) {
+        if (el.tagName === "FIGCAPTION") {
+          console.log(el.tagName);
+          drake.cancel();
+        }
+      });
+      //on drop event, if target container is already full, old image is removed
+
+      drake.on("drop", (el, target, source, sibling) => {
+        // console.log('tada');
+        // console.log(el);
+        // console.log(target);
+        // console.log(source);
+        // console.log(sibling);
+        // console.log(source.tagName);
+        // console.log(target.children.length);
+        // console.log(target.children);
+        if (target.tagName === "DIV") {
+          for (let i of target.children) {
+            if (!i.classList.contains("gu-transit")) {
+              console.log(i);
+              i.remove();
+            }
+          }
+        }
+        if (
+          (source.tagName === "DIV" || source.tagName === "FIGURE") &&
+          (target.tagName === "FIGURE" || target.tagName === "FIGCAPTION")
+        ) {
+          if (el.classList.contains("gu-transit")) console.log(el);
+          drake.remove();
+        }
+      });
 
 
 
@@ -247,10 +237,18 @@ jQuery(document).ready(($) => {
 
     /***** LARGEUR MOBILE ********/
 
-    if (largeurEcran <= 768) {
+    if (largeurEcran < 768) {
       // alert('Cliquez sur les cases puis choisissez vos plantes pour les remplir automatiquement.');
       jQuery("#mobileModalExplication").modal();
       jQuery('.td').on('click', (e) => {
+        //apparition de la modale d'explication
+        document.getElementsByClassName("explicationVersionMobile")[0].classList.add("d-block");
+
+        //au clic sur les boutons de la modale ou en-dehors, disparition de la modale
+        document.getElementById("mobileModalExplication").addEventListener("click", () => {
+          document.getElementById("mobileModalExplication").classList.remove("d-block");
+        });
+
         if (jQuery(e.currentTarget).hasClass('div_selected')) {
           jQuery(e.currentTarget).removeClass('div_selected');
           classCompteur--;
@@ -267,50 +265,39 @@ jQuery(document).ready(($) => {
           jQuery('.mobile_categories').attr("style", "display: none");
         };
 
-        //apparition de la modale d'explication
-        document.getElementsByClassName("explicationVersionMobile")[0].classList.add("d-block");
-
-        //au clic sur les boutons de la modale ou en-dehors, disparition de la modale
-        document.getElementById("mobileModalExplication").addEventListener("click", () => {
-          document.getElementById("mobileModalExplication").classList.remove("d-block");
-        });
-
         //génération de la liste des plantes Mobile
         document.getElementById("mobile_categories").addEventListener('click', () => {
           jQuery("#presentationPlanteMobile").modal();
 
-
-         for (let plante in plantes) {
+          for (let plante in plantes) {
 
             // pour chaque type de plante, on crée une div 
             const planteTable = document.createElement('div');
             planteTable.setAttribute("id", plante + "Mobile");
-             planteTable.setAttribute("class", "container");
-             planteTable.classList.add("row",  "justify-content-start", "p-0", "pl-2", "m-0");
+            planteTable.setAttribute("class", "container");
+            planteTable.classList.add("row", "justify-content-start", "p-0", "pl-2", "m-0");
 
             // pour chaque plante d'un certain type, on crée une figure qui entre dans la div du type de la plante
             for (let j = 0; j < plantes[plante].length; j++) {
 
               planteTable.innerHTML = planteTable.innerHTML +
 
-                `<figure class=" m-1 grid-item ${plante}"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
+                `<figure class=" m-1 grid-item ${plante}" data-dismiss = "modal"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
            alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
        <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
        </figure>`;
-              
+
             }
-           
-          // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
-         document.getElementById("spanVide").after(planteTable); 
-          //  document.getElementById("plantesListeMobile").after(planteTable);
-          //   console.log(document.getElementById("plantesListeMobile"));
-           } 
-          
 
-   //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
+            // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
+            document.getElementById("spanVide").after(planteTable);
+            //  document.getElementById("plantesListeMobile").after(planteTable);
 
-   majFirstLetter(figcaption);        
-       //mise en forme et gestion images slick:
+          }
+
+          //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
+          majFirstLetter(figcaption);
+          //mise en forme et gestion images slick:
 
           $('#plantesListeMobile').slick({
             infinite: true,
@@ -321,62 +308,26 @@ jQuery(document).ready(($) => {
             accessibility: true, // option d'accessibilité : active le défilement via les touches du clavier (gauche/droite) et la touche de sélection TAB
             swipe: true, // faire glisser avec la souris
             touchThreshold: 10, // si swipe = true, détermine la longueur du swipe nécessaire pour activer le défilement selon la règle :  (1/touchThreshold) * the width of the slider
-            responsive: [ // gestion du responsive
-              // {
-              //   settings: {
-              //     slidesToShow: 1,
-              //     slidesToScroll: 1,
-              //     infinite: true,
-              //     dots: true
-              //   }
-              // },
-              // {
-        
-              //   settings: {
-              //     slidesToShow: 1,
-              //     slidesToScroll: 2,
-              //     dots: true
-              //   }
-              // },
-              // {
-        
-              //   settings: {
-              //     slidesToShow: 1,
-              //     slidesToScroll: 1,
-              //     dots: true
-              //   }
-              // }
-            ]
           });
-          
 
-          //Passage en majuscule de la première lettre de la légende des images de plantes et de leurs hover
 
-          majFirstLetter(figcaption);
-          
-        // sélection de la plante cliquée : 
-     jQuery('.selection_plante').on('click',(e) =>{
-     jQuery(e.currentTarget).addClass("ma_selection");
-      const cases_cochees = jQuery('.div_selected');
+          // sélection de la plante cliquée : 
+          jQuery('.selection_plante').on('click', (e) => {
+            jQuery(e.currentTarget).addClass("ma_selection");
+            const cases_cochees = jQuery('.div_selected');
 
-      for (let i of cases_cochees) {
-       
-        console.log(jQuery('.selection_plante').html());
-        cases_cochees.html(jQuery(e.currentTarget).html());
-        jQuery('.div_selected').removeClass('div_selected');
-        $('presentationPlanteMobile').on('hidden.bs.modal');
-  
-      }
- 
-      });
+            for (let i of cases_cochees) {
+
+              console.log(jQuery('.selection_plante').html());
+              cases_cochees.html(jQuery(e.currentTarget).html());
+              jQuery('.div_selected').removeClass('div_selected');
+
+            }
+          });
+        });
+
 
       });
-   
-   /*  const planteSelect = jQuery('#plantesListeMobile').children('figure');
-    console.log(planteSelect); */
-
-
-     })
 
     }
 
