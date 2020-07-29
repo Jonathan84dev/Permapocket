@@ -86,7 +86,13 @@ jQuery(document).ready(($) => {
     e.preventDefault();
     //génération de la grille
     if (largeur.value >= 0 && longueur.value >= 0) {
+
       const newTable = document.createElement("div");
+
+      // apparition du bloc texte : confirmation des dimensions du jardin
+      const confirm_size = jQuery('.confirm_size');
+      jQuery(confirm_size).addClass('d-block');
+
       newTable.setAttribute("id", "grilleDeJardin");
       newGarden.prepend(newTable);
       for (let i = 0; i < longueur.value; i++) {
@@ -122,6 +128,10 @@ jQuery(document).ready(($) => {
 
   validationGrille.addEventListener("click", (e) => {
     e.preventDefault();
+
+    // on cache le bloc texte 'dimensions du jardin'
+    const confirm_size = jQuery('.confirm_size');
+    jQuery(confirm_size).removeClass('d-block');
 
     /*****LARGEUR DESKTOP ******/
     if (largeurEcran >= 768) {
@@ -267,9 +277,9 @@ jQuery(document).ready(($) => {
 
         //génération de la liste des plantes Mobile
         document.getElementById("mobile_categories").addEventListener('click', () => {
-          jQuery("#presentationPlanteMobile").modal();
-
+          jQuery("#presentationPlanteMobile").modal();    
           for (let plante in plantes) {
+
 
             // pour chaque type de plante, on crée une div 
             const planteTable = document.createElement('div');
@@ -290,8 +300,9 @@ jQuery(document).ready(($) => {
             }
 
             // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
-            document.getElementById("spanVide").after(planteTable);
-            //  document.getElementById("plantesListeMobile").after(planteTable);
+            // document.getElementById("spanVide").after(planteTable);
+        
+             document.getElementById("plantesListeMobile").innerHTML=document.getElementById("plantesListeMobile").innerHTML+planteTable.outerHTML;
 
           }
 
@@ -300,7 +311,7 @@ jQuery(document).ready(($) => {
           //mise en forme et gestion images slick:
 
           $('#plantesListeMobile').slick({
-            infinite: true,
+            infinite: false,
             slidesToShow: 1,
             slidesToScroll: 1,
             speed: 1200,
@@ -310,7 +321,6 @@ jQuery(document).ready(($) => {
             touchThreshold: 10, // si swipe = true, détermine la longueur du swipe nécessaire pour activer le défilement selon la règle :  (1/touchThreshold) * the width of the slider
           });
 
-
           // sélection de la plante cliquée : 
           jQuery('.selection_plante').on('click', (e) => {
             jQuery(e.currentTarget).addClass("ma_selection");
@@ -318,13 +328,23 @@ jQuery(document).ready(($) => {
 
             for (let i of cases_cochees) {
 
-              console.log(jQuery('.selection_plante').html());
-              cases_cochees.html(jQuery(e.currentTarget).html());
+/*               console.log(jQuery('.selection_plante').html());
+ */              cases_cochees.html(jQuery(e.currentTarget).html());
+              jQuery('.div_selected').addClass('_plante');
               jQuery('.div_selected').removeClass('div_selected');
 
             }
+            console.log(cases_cochees.html());
           });
         });
+        jQuery('._plante').on('dblclick', (e) => {
+
+        if (jQuery(e.currentTarget).html() != '') 
+        {
+          (jQuery(e.currentTarget).html(''))
+        }
+
+      })
 
 
       });

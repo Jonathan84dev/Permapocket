@@ -27,10 +27,12 @@
 
         <div class="row justify-content-start">
             <div class="titre col-12 col-md-5 px-2 pt-2 pb-0">
+                <a id="titre_clic" href="index.html">
                 <div class="logo">
                     <img src="img/coccInelle.svg" alt="logo de permapocket">
                     <h1 class="d-inline ml-2">Permapocket</h1>
                 </div>
+                </a>
             </div>
 
             <nav
@@ -60,11 +62,12 @@
 
     <!-- main -->
     <main class="mainmodele position-relative d-flex align-content-center pt-0">
-        <div class="container row m-0 justify-content-center align-items-center col-12">
-
+        <div class="container row m-0 justify-content-center align-items-center col-12 flex-wrap">
+        <!-- bloc : confirmer la taille du jardin  -->
+    <div class="confirm_size h4 col-12 text-center d-none">Confirmez-vous les dimensions de votre jardin ?</div>
             <!-- formulaire pour la taille du jardin  -->
             <form action="#" method="get" class="p-0 col-12 col-md-5" id="formulaire">
-                <H1 class="col-12 h3 text-center mb-2">Dessinez votre jardin: </H1>
+                <H1 class="col-12 h4 text-center mb-2">Dessinez votre jardin: </H1>
                 <fieldset class="mt-5">
                     <div class="input-group mb-3">
                         <label for="largeur" class="col-12 pl-1 font-weight-bold">Largeur de votre jardin: </label>
@@ -190,9 +193,8 @@ aria-labelledby="modelTitleId" aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-            <div id="plantesListeMobile"class="container-fluid">
-                <span id="spanVide" ></span>
-              
+            <div id="plantesListeMobile"class="container-fluid"><!-- <span id="spanVide"></span>
+               -->
             </div>
         </div>
         <div class="modal-footer">
@@ -203,8 +205,6 @@ aria-labelledby="modelTitleId" aria-hidden="true">
 </div>
 
 <!-- fin modale plante mobile -->
-
-
 
             <!-- Version desktop: contient les plantes et la modale d'explication du desktop -->
             <div id="plantes" class="container col-md-5 d-none text-center py-3">
