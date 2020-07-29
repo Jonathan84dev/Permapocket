@@ -27,10 +27,12 @@
 
         <div class="row justify-content-start">
             <div class="titre col-12 col-md-5 px-2 pt-2 pb-0">
+                <a id="titre_clic" href="index.html">
                 <div class="logo">
                     <img src="img/coccInelle.svg" alt="logo de permapocket">
                     <h1 class="d-inline ml-2">Permapocket</h1>
                 </div>
+                </a>
             </div>
 
             <nav
@@ -60,11 +62,8 @@
 
     <!-- main -->
     <main class="mainmodele position-relative d-flex align-content-center pt-0">
-        <div class="container row m-0 justify-content-center align-items-center col-12">
-            <div class="container row m-0 justify-content-center align-items-center col-12">
-
-                <div id="importerVotreJardin" class="col-12 text-center my-4 mx-0 px-0">
-
+      
+        <div id="importerVotreJardin" class="col-12 text-center my-4 mx-0 px-0">
                     <H1 class="col-12 h4 text-center font-weight-bold mb-4">Importer votre jardin: </H1>
                     <!-- <label for="file" class="label-file">Importer un fichier</label> -->
                   
@@ -74,7 +73,10 @@
                     <button id="validationJardinImport" >Valider</button>
                 </div>
 
-
+        <div class="container row m-0 justify-content-center align-items-center col-12 flex-wrap">
+        <!-- bloc : confirmer la taille du jardin  -->
+    <div class="confirm_size h4 col-12 text-center d-none">Confirmez-vous les dimensions de votre jardin ?</div>
+    
                 <!-- formulaire pour la taille du jardin  -->
                 <form action="#" method="get" class="p-0 col-12 col-md-5" id="formulaire">
                     <H1 class="col-12 h4 text-center font-weight-bold mb-2">Dessinez un nouveau jardin: </H1>
@@ -134,6 +136,7 @@
                 </div>
                 <!--fin des boutons catégories version mobile-->
 
+
                 <!-- grille du jardin desktop et mobile -->
 
                 <div id="creationTable" class="table d-none col-12 col-md-7 m-0 p-0">
@@ -158,6 +161,66 @@
                     <!-- fin du groupe de boutons -->
                 </div>
                 <!--fin de la grille du jardin-->
+
+           
+<!-- Version Mobile: plantes et modale d'explication -->
+<div id="plantesMobile" class="container col-md-5 d-none text-center py-3"></div>
+<!-- modale d'explication Mobile -->
+
+    <div class="explicationVersionMobile modal fade" id="mobileModalExplication" tabindex="-1" role="dialog"
+        aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Comment ça marche ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <p>-Sélectionnez les cases qui contiendront les mêmes plantes.
+                        </p>
+                        <p>-cliquez sur le bouton plante et sélectionner la plante voulue</p>
+                        <p>-Les cases se remplissent automatiquement</p>
+                        <p>-Pour vider une case, double-cliquez dessus</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- fin modale d'explication mobile-->
+
+<!-- modale plante mobile -->
+<div class="explicationVersionMobile modal fade" id="presentationPlanteMobile" tabindex="-1" role="dialog"
+aria-labelledby="modelTitleId" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Choisissez une plante</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="plantesListeMobile"class="container-fluid"><!-- <span id="spanVide"></span>
+               -->
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal">Fermer</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- fin modale plante mobile -->
+
+            <!-- Version desktop: contient les plantes et la modale d'explication du desktop -->
+            <div id="plantes" class="container col-md-5 d-none text-center py-3">
 
                 <!-- Version Mobile: plantes et modale d'explication -->
                 <div id="plantesMobile" class="container col-md-5 d-none text-center py-3"></div>

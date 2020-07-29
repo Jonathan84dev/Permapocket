@@ -67,6 +67,10 @@ header li:hover, a:hover, footer, footer a {
   color: #ffffdd;
 }
 
+#titre_clic {
+  color:#d3de32;
+}
+
 /*** Couleurs de background ***/
 
 body, .navbar-toggler {
@@ -222,6 +226,29 @@ button, #generation,  #file-upload-button {
 .mobile_categories {
   display:none;
 }
+
+/* SLICK */
+
+.slick-dots {
+  width: 100%;
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin : 10px 15px;
+}
+
+.slick-next {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+#slick-slide01
+{
+/*   display:none;
+ */}
 
 
 /*** PAGE INDEX ***/
