@@ -33,7 +33,7 @@
 // });});
   // const sauvegardepdf = (() => {
   //   const doc = new jsPDF();
-  //   const elementHTML = $('#grilleDeJardin').html();
+  //   const elementHTML = $('#creationTable').html();
   //   const specialElementHandlers = {
   //     '#editor': function (element, renderer) {
   //       return true;
@@ -44,7 +44,7 @@
   //     doc.fromHTML(elementHTML, 15, 15, {
   //       'width': 170,
   //       'elementHandlers': specialElementHandlers}, {
-  //       // doc.html($('#grilleDeJardin').html()), 
+  //       // doc.html($('#creationTable').html()), 
   //       callback: function (doc) {
   //         doc.save();
   //       }
@@ -60,19 +60,23 @@
   //   // lienpdf.setAttribute('download', "monJardin.pdf");
   //   // lienpdf.setAttribute('href', url);
 
-  //  //Fonction de sauvegarde pdf du jardin: 
-  //  const sauvegardepdf = (() => {
-  //   const data = { a: document.getElementById("grilleDeJardin").innerHTML };
-  //   const json = JSON.stringify(data);
-  //   const blob = new Blob([json], { type: "text/xml" });
-  //   // const pdf = blob.stream();
-  //   const url = URL.createObjectURL(blob);
-  //   const lien = document.getElementById('lienpdf');
-  //   lien.setAttribute('download', "monJardin.pdf");
-  //   lien.setAttribute('href', url);
-  // });
+//Fonction de sauvegarde pdf du jardin: 
+// const savePdf = (() => {
+//   const data = $("#creationJardin").html();
+//   const blob = new Blob([data], { type: "text/xml" });
+//   // const pdf = blob.stream();
+//   const url = URL.createObjectURL(blob);
+
+//   const lien = $('#lienpdf'); 
+//   lien.attr('href', url);
+// });
+
+
+
+// $("#lienpdf").on('click', () => savePdf());
+// 
   
 
 
-    // $("#lienpdf").on('click', () => sauvegardepdf());
+    // $("#lienpdf").on('click', () => savePdf());
 
