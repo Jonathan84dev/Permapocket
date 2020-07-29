@@ -17,7 +17,8 @@ jQuery(document).ready(($) => {
   const validationGrille = document.getElementById("validationGrille");
   const figcaption = document.getElementsByTagName("figcaption");
   const hoverTexte = document.getElementsByClassName("hoverTexte");
-
+  let classCompteur = 0;
+  const largeurEcran = window.innerWidth;
 
   //fonction : mettre la 1ère lettre des string d'un tableau (nom) en majuscule
   const majFirstLetter = (nom) => {
@@ -54,12 +55,11 @@ jQuery(document).ready(($) => {
       "sauge",
     ],
   };
-  let classCompteur = 0;
-  const largeurEcran = window.innerWidth;
+
 
   //Fonction de sauvegarde en json du jardin créé: 
   const sauvegarde = (() => {
-    const data = { a: document.getElementById("grilleDeJardin").innerHTML };
+    const data = { a: document.getElementById("grilleDeJardin").outerHTML };
     const json = JSON.stringify(data);
     const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -68,6 +68,7 @@ jQuery(document).ready(($) => {
     lien.setAttribute('href', url);
   });
 
+  //fonction de sauvegarde du Modele en json
   const sauvegardeModele2 = (() => {
     const data = { a: document.getElementById("modele2").innerHTML };
     const json = JSON.stringify(data);
@@ -78,56 +79,26 @@ jQuery(document).ready(($) => {
     lien.setAttribute('href', url);
   });
 
-  $("#jsonSaveModele2").on('click', () => sauvegardeModele2());
 
-  //Récupération des données du formulaire: au click, génération de la grille
+  //fonction d'import d'un modele json depuis un PC
+  const importJSONFunction = () => {
+    document.getElementById('importerVotreJardin').classList.add("d-none")
+    //disparition du formulaire
+    formulaire.style.display = "none";
+    creationTable.classList.remove("d-none");
+    $('#validationGrille').on('click', () => {
+      //console.log('test2');
+      validationGrilleFonction();
+    });
+  }
 
-  generation.addEventListener("click", (e) => {
-    e.preventDefault();
-    //génération de la grille
-    if (largeur.value >= 0 && longueur.value >= 0) {
-
-      const newTable = document.createElement("div");
-
-      // apparition du bloc texte : confirmation des dimensions du jardin
-      const confirm_size = jQuery('.confirm_size');
-      jQuery(confirm_size).addClass('d-block');
-
-      newTable.setAttribute("id", "grilleDeJardin");
-      newGarden.prepend(newTable);
-      for (let i = 0; i < longueur.value; i++) {
-        const newTr = document.createElement("div");
-        newTr.classList.add(
-          "tr",
-          "row",
-          "col-12",
-          "flex-nowrap",
-          "justify-content-center",
-          "align-items-center",
-          "m-0"
-        );
-        newTable.prepend(newTr);
-
-        for (let j = 0; j < largeur.value; j++) {
-          const newTd = document.createElement("div");
-          newTd.classList.add("td", "cell", "m-1", "p-0");
-          newTr.appendChild(newTd);
-        }
-      }
-      //disparition du formulaire
-      formulaire.style.display = "none";
-      //apparition des boutons de validation de la grille
-      creationTable.classList.remove("d-none");
-    } else {
-    }
-  });
+  //Fonctions gestion de remplissage du jardin selon taille de fenêtre
 
 
-
-  //Au clic de validation de la grille
-
-  validationGrille.addEventListener("click", (e) => {
-    e.preventDefault();
+  const validationGrilleFonction = () => {
+    //disparition des boutons la page précédente
+    returnCreation.classList.add("d-none");
+    validationGrille.classList.add("d-none");
 
     // on cache le bloc texte 'dimensions du jardin'
     const confirm_size = jQuery('.confirm_size');
@@ -293,7 +264,7 @@ jQuery(document).ready(($) => {
               planteTable.innerHTML = planteTable.innerHTML +
 
                 `<figure class=" m-1 grid-item ${plante}" data-dismiss = "modal"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
-           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte">${plantes[plante][j]}</span></div> 
+           alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte text-center">${plantes[plante][j]}</span></div> 
        <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
        </figure>`;
 
@@ -337,6 +308,7 @@ jQuery(document).ready(($) => {
             console.log(cases_cochees.html());
           });
         });
+
         jQuery('._plante').on('dblclick', (e) => {
 
         if (jQuery(e.currentTarget).html() != '') 
@@ -348,25 +320,90 @@ jQuery(document).ready(($) => {
 
 
       });
-
     }
-
-
-    //disparition des boutons la page précédente
-    returnCreation.classList.add("d-none");
-    validationGrille.classList.add("d-none");
-
     //apparition des boutons d'impression et de sauvegarde
     document.getElementById("print").classList.add("d-block");
     document.getElementById("jsonSave").classList.add("d-block");
-    document.getElementById("pdf").classList.add("d-block");
+    // document.getElementById("pdf").classList.add("d-block");
     document.getElementById("toGardenCreation").classList.add("d-block");
+  }
+
+  //sauvegarde Modele 02 JSon
+  $("#jsonSaveModele2").on('click', () => sauvegardeModele2());
 
 
+  //import json
+
+  document.getElementById("importJson").addEventListener("change", (event) => {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      // console.log(event.target.result);
+      const obj = JSON.parse(event.target.result);
+      creationTable.innerHTML = obj.a + creationTable.innerHTML;
+      console.log(creationTable);
+    };
+    reader.readAsText(event.target.files[0]);
+    // creationTable.classList.remove("d-none");
 
   });
 
+  // a la validation du téléchargement du fichier json: 
+  document.getElementById('validationJardinImport').addEventListener('click', () => {
+    importJSONFunction();
+  });
 
+  //Récupération des données du formulaire: au click, génération de la grille
+
+  generation.addEventListener("click", (e) => {
+    e.preventDefault();
+    //génération de la grille
+    if (largeur.value >= 0 && longueur.value >= 0) {
+      const newTable = document.createElement("div");
+      
+        // apparition du bloc texte : confirmation des dimensions du jardin
+      const confirm_size = jQuery('.confirm_size');
+      jQuery(confirm_size).addClass('d-block');
+      
+      newTable.setAttribute("id", "grilleDeJardin");
+      newGarden.prepend(newTable);
+      for (let i = 0; i < longueur.value; i++) {
+        const newTr = document.createElement("div");
+        
+        
+        newTr.classList.add(
+          "tr",
+          "row",
+          "col-12",
+          "flex-nowrap",
+          "justify-content-center",
+          "align-items-center",
+          "m-0"
+        );
+        newTable.prepend(newTr);
+
+        for (let j = 0; j < largeur.value; j++) {
+          const newTd = document.createElement("div");
+          newTd.classList.add("td", "cell", "m-1", "p-0");
+          newTr.appendChild(newTd);
+        }
+      }
+      //disparition du formulaire
+      formulaire.style.display = "none";
+      //apparition des boutons de validation de la grille
+      creationTable.classList.remove("d-none");
+    } else {
+    }
+  });
+
+
+
+  //Au clic de validation de la grille
+
+  validationGrille.addEventListener("click", (e) => {
+
+    console.log('test');
+    validationGrilleFonction();
+  });
 
   //Sauvegarde sur le pc au format json d'un jardin:
 
@@ -374,7 +411,7 @@ jQuery(document).ready(($) => {
 
 
 
-  //import json
+
 
 });
 

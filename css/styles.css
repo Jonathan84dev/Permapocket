@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0px;
   min-height: 100%;
@@ -50,12 +55,12 @@ header h1 {
 
 /*** Couleurs de police ***/
 
-header, button, #generation, .bars, .input-group-append label, .button, .button:hover, .grid-item, footer a:hover {
+header, button, #generation, .bars, .input-group-append label, .button, .button:hover, .grid-item, footer a:hover{
   color: #d3de32;
 }
 
-body, header a, label, select, .hoverTexte, .button.is-checked, #modele2 h1 {
-  color: #006a71;
+body, header a, label, select, .hoverTexte, .button.is-checked, #modele2 h1, #importJson {
+  color: #006a71 ;
 }
 
 header li:hover, a:hover, footer, footer a {
@@ -154,25 +159,23 @@ main {
  /* retirer la hauteur du header et du footer */
    min-height: calc(100vh - 120px);
   margin-top: 100px !important; 
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .mainmodele .td {
-  /* min-width: 54px;
-  max-width: 54px;
-  min-height: 54px;
-  max-height: 54px; */
-  width: 54px;
-  height: 54px;
+  width: 30px;
+  height: 30px;
   border: 2px solid #006a71;
   border-radius: 5px;
 }
 
 .vignette, .plante {
-  width: 50px;
-  height: 50px;
+
+  width: 24px;
+  height: 24px;
   border: 2px solid #d3de32;
   border-radius: 5px;
-
 }
 
 .hoverTexte {
@@ -189,14 +192,21 @@ main {
   display: block;
 }
 
-button, #generation {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: none;
-  font-weight: bold;
+button, #generation,  #file-upload-button {
+  border-radius: 5px !important;
+  padding: 5px 10px !important;
+  border: none !important;
+  font-weight: bold !important;
 }
 
 
+#modele2 {
+  overflow-x: scroll;
+  width: 100%;
+  padding-left: 120px;
+  padding-right: 30px;
+  /* scroll-padding-left: 200px; */
+}
 /* #grilleDeJardin {
   max-height: 70vh;
   max-width: 60vw;
@@ -268,6 +278,7 @@ h2 {
   height: 200px;
   width: 100%;
 }
+
 
 /**** librairie isotope.js ****/
 
@@ -420,6 +431,8 @@ footer img {
   }
 }
 
+
+
 @media (min-width: 768px) {
   .menu {
       background: none;
@@ -429,6 +442,20 @@ footer img {
       justify-content: end;      
   }
 
+.mainmodele .td {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #006a71;
+  border-radius: 5px;
+}
+
+.vignette, .plante {
+
+  width: 50px;
+  height: 50px;
+  border: 2px solid #d3de32;
+  border-radius: 5px;
+}
   header li {
     font-size:1em;
     font-weight: bold;
@@ -456,7 +483,7 @@ footer img {
   /* Paramètres pour l'impression du jardin */
   
   @media print {
-    header, footer, #plantes, #print, #pdfSave, img, form, #lienpdf {
+    header, footer, #plantes, #print, #pdfSave, img, form, #lienpdf, #mobile_categories, #jsonSave, #toGardenCreation {
       display: none !important;
     }
     .mainmodele .td {
