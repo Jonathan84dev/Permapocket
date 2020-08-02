@@ -66,6 +66,8 @@ jQuery(document).ready(($) => {
     const lien = document.getElementById('jsonSaveLink');
     lien.setAttribute('download', "monJardin.json");
     lien.setAttribute('href', url);
+
+
   });
 
   //fonction de sauvegarde du Modele en json
@@ -82,27 +84,41 @@ jQuery(document).ready(($) => {
 
   //fonction d'import d'un modele json depuis un PC
   const importJSONFunction = () => {
-    document.getElementById('importerVotreJardin').classList.add("d-none")
+    document.getElementById('importerVotreJardin').classList.add("d-none");
     //disparition du formulaire
     formulaire.style.display = "none";
     creationTable.classList.remove("d-none");
-    $('#validationGrille').on('click', () => {
-      //console.log('test2');
-      validationGrilleFonction();
+    // $('#validationGrille').on('click', () => {
+   document.getElementById('validationGrille').addEventListener('click', () => {
+      console.log('test2');
+      document.getElementById('step2validation').classList.remove('d-flex');
+      document.getElementById('step2validation').classList.add('d-none');
+
+      validationGrilleFonction();  
+      
+      // document.getElementById('jsonSave').addEventListener('click', () => {
+      // console.log('test3');
+      
+      // sauvegarde();
+      // });
+      
+     
     });
   }
 
   //Fonctions gestion de remplissage du jardin selon taille de fenêtre
-
 
   const validationGrilleFonction = () => {
     //disparition des boutons la page précédente
     returnCreation.classList.add("d-none");
     validationGrille.classList.add("d-none");
 
-    // on cache le bloc texte 'dimensions du jardin'
+
+   // on cache le bloc texte 'dimensions du jardin'
     const confirm_size = jQuery('.confirm_size');
     jQuery(confirm_size).removeClass('d-block');
+
+
 
     /*****LARGEUR DESKTOP ******/
     if (largeurEcran >= 768) {
@@ -172,7 +188,6 @@ jQuery(document).ready(($) => {
         drake.containers.push(figures[j]);
       }
 
-
       //permet de vider une case du jardin de son contenu si on veut repositionner l'élément
       drake.containers.push(tableauTd);
       let effacer = dragula(tableauTd, { removeOnSpill: true });
@@ -184,6 +199,7 @@ jQuery(document).ready(($) => {
           drake.cancel();
         }
       });
+
       //on drop event, if target container is already full, old image is removed
 
       drake.on("drop", (el, target, source, sibling) => {
@@ -211,9 +227,6 @@ jQuery(document).ready(($) => {
           drake.remove();
         }
       });
-
-
-
     };
 
     /***** LARGEUR MOBILE ********/
@@ -248,9 +261,9 @@ jQuery(document).ready(($) => {
 
         //génération de la liste des plantes Mobile
         document.getElementById("mobile_categories").addEventListener('click', () => {
-          jQuery("#presentationPlanteMobile").modal();    
-          for (let plante in plantes) {
+          jQuery("#presentationPlanteMobile").modal();
 
+          for (let plante in plantes) {
 
             // pour chaque type de plante, on crée une div 
             const planteTable = document.createElement('div');
@@ -263,17 +276,16 @@ jQuery(document).ready(($) => {
 
               planteTable.innerHTML = planteTable.innerHTML +
 
-                `<figure class=" m-1 grid-item ${plante}" data-dismiss = "modal"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
+                `<figure class=" m-1 grid-item ${plante} row justify-content-center text-center" data-dismiss = "modal"><div class="text-center selection_plante"><img src="img/${plante}s/${plantes[plante][j]}.jpg"
            alt="${plantes[plante][j]}" class="plante"><span class="hoverTexte text-center">${plantes[plante][j]}</span></div> 
-       <figcaption class="name text-capitalize">${plantes[plante][j]}</figcaption>   
+       <figcaption class="name text-capitalize mx-2">${plantes[plante][j]}</figcaption>   
        </figure>`;
 
             }
 
             // document.getElementById("spanVide").innerHTML=document.getElementById("spanVide").innerHTML + planteTable.innerHTML;
-            // document.getElementById("spanVide").after(planteTable);
-        
-             document.getElementById("plantesListeMobile").innerHTML=document.getElementById("plantesListeMobile").innerHTML+planteTable.outerHTML;
+            document.getElementById("spanVide").after(planteTable);
+            //  document.getElementById("plantesListeMobile").after(planteTable);
 
           }
 
@@ -282,7 +294,7 @@ jQuery(document).ready(($) => {
           //mise en forme et gestion images slick:
 
           $('#plantesListeMobile').slick({
-            infinite: false,
+            infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             speed: 1200,
@@ -292,6 +304,7 @@ jQuery(document).ready(($) => {
             touchThreshold: 10, // si swipe = true, détermine la longueur du swipe nécessaire pour activer le défilement selon la règle :  (1/touchThreshold) * the width of the slider
           });
 
+
           // sélection de la plante cliquée : 
           jQuery('.selection_plante').on('click', (e) => {
             jQuery(e.currentTarget).addClass("ma_selection");
@@ -299,25 +312,25 @@ jQuery(document).ready(($) => {
 
             for (let i of cases_cochees) {
 
-/*               console.log(jQuery('.selection_plante').html());
- */              cases_cochees.html(jQuery(e.currentTarget).html());
-              jQuery('.div_selected').addClass('_plante');
-              jQuery('.div_selected').removeClass('div_selected');
+            //  console.log(jQuery('.selection_plante').html());
+              cases_cochees.html(jQuery(e.currentTarget).html());
 
+              jQuery('.div_selected').addClass('_plante');              
+              // $('<div>').append($('#xxx').clone()).html();
+              // cases_cochees.append(($(e.currentTarget)).clone().html()).html();              
+              jQuery('.div_selected').removeClass('div_selected');
             }
-            console.log(cases_cochees.html());
           });
         });
 
         jQuery('._plante').on('dblclick', (e) => {
-
-        if (jQuery(e.currentTarget).html() != '') 
-        {
-          (jQuery(e.currentTarget).html(''))
-        }
-
-      })
-
+          console.log('clickclick');
+          if (jQuery(e.currentTarget).html() != '') 
+          {
+            (jQuery(e.currentTarget).html(''))
+          }
+  
+        });
 
       });
     }
@@ -359,17 +372,17 @@ jQuery(document).ready(($) => {
     //génération de la grille
     if (largeur.value >= 0 && longueur.value >= 0) {
       const newTable = document.createElement("div");
-      
-        // apparition du bloc texte : confirmation des dimensions du jardin
+
+
+      // ***** apparition du bloc texte : confirmation des dimensions du jardin ****
       const confirm_size = jQuery('.confirm_size');
       jQuery(confirm_size).addClass('d-block');
-      
+
+
       newTable.setAttribute("id", "grilleDeJardin");
       newGarden.prepend(newTable);
       for (let i = 0; i < longueur.value; i++) {
         const newTr = document.createElement("div");
-        
-        
         newTr.classList.add(
           "tr",
           "row",
@@ -391,6 +404,8 @@ jQuery(document).ready(($) => {
       formulaire.style.display = "none";
       //apparition des boutons de validation de la grille
       creationTable.classList.remove("d-none");
+       //diparition possibilté import
+       document.getElementById('importerVotreJardin').classList.add("d-none");   
     } else {
     }
   });
@@ -405,14 +420,14 @@ jQuery(document).ready(($) => {
     validationGrilleFonction();
   });
 
-  //Sauvegarde sur le pc au format json d'un jardin:
+ //Sauvegarde sur le pc au format json d'un jardin:
 
-  $("#jsonSave").on('click', () => sauvegarde());
-
-
-
-
-
+ document.getElementById('jsonSave').addEventListener('click', () => {
+  console.log('test3');
+  
+    sauvegarde()
+  });
+  
 });
 
 
