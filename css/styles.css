@@ -67,10 +67,6 @@ header li:hover, a:hover, footer, footer a {
   color: #ffffdd;
 }
 
-#titre_clic {
-  color:#d3de32;
-}
-
 /*** Couleurs de background ***/
 
 body, .navbar-toggler {
@@ -163,6 +159,21 @@ main {
   width: 100%;
 }
 
+figure .td{
+ 
+    width: 54px;
+    height: 54px;
+    border: 2px solid #006a71;
+    border-radius: 5px;
+  
+}
+
+figure .plante{
+  width: 50px;
+  height: 50px;
+  border: 2px solid #d3de32;
+  border-radius: 5px;
+}
 .mainmodele .td {
   width: 30px;
   height: 30px;
@@ -227,8 +238,6 @@ button, #generation,  #file-upload-button {
   display:none;
 }
 
-/* SLICK */
-
 .slick-dots {
   width: 100%;
   text-align: center;
@@ -245,10 +254,10 @@ button, #generation,  #file-upload-button {
   right:0;
 }
 
-#slick-slide01
+/* #slick-slide01
 {
-/*   display:none;
- */}
+  display:none;
+} */
 
 
 /*** PAGE INDEX ***/
@@ -428,6 +437,14 @@ footer img {
   
   .navbar {
     margin-top: 18px;
+  }
+
+  #modele2 {
+    overflow-x: hidden;
+    width: 100%;
+    padding-left: 30px;
+
+    /* scroll-padding-left: 200px; */
   }
 }
 
